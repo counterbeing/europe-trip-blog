@@ -1,0 +1,18 @@
+$dark: #333;
+$light: #fff;
+$highlight: #ffc0cb;
+
+body {
+  background-color: $dark;
+  color: $light;
+}
+
+a {
+  color: $light;
+}
+
+.stories-index {
+  .selected {
+    color: $highlight;
+  }
+}
