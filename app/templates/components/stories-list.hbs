@@ -1,0 +1,12 @@
+<h3> Stories list component</h3>
+<ul class="stories-index">
+  {{#each stories as |story|}}
+    <li {{action 'selectStory' story}}
+      class="{{if story.selected 'selected'}}"
+      >
+      {{story.title}}
+      {{#link-to 'story' story}}{{story.title}}{{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+{{yield}}
