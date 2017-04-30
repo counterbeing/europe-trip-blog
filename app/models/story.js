@@ -10,5 +10,6 @@ export default DS.Model.extend({
     }
   ),
   title: DS.attr('string'),
-  date: DS.attr('date')
+  date: DS.attr('date'),
+  body: DS.attr('string')
 })

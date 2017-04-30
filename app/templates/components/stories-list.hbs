@@ -5,7 +5,7 @@
       class="{{if story.selected 'selected'}}"
       >
       {{story.title}}
-      {{#link-to 'story' story}}{{story.title}}{{/link-to}}
+      {{#link-to 'story' story.id}}{{story.title}}{{/link-to}}
     </li>
   {{/each}}
 </ul>

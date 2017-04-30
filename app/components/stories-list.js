@@ -5,7 +5,6 @@ export default Ember.Component.extend({
 
   store: Ember.inject.service(),
 
-  // return this.get('store').findAll('story')
   showStories: Ember.on('didInsertElement', function() {
     this.get('store').findAll('story').then((stories) => {
       this.set('stories', stories)
@@ -18,7 +17,6 @@ export default Ember.Component.extend({
     },
 
     selectStory: function(story) {
-      // console.log(story.id)
       this.get('storyService').setCurrentlySelectedStory(story.id)
     }
   }
