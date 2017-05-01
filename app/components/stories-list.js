@@ -5,6 +5,8 @@ export default Ember.Component.extend({
 
   store: Ember.inject.service(),
 
+  classNames: ['stories-index'],
+
   showStories: Ember.on('didInsertElement', function() {
     this.get('store').findAll('story').then((stories) => {
       this.set('stories', stories)

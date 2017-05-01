@@ -1,10 +1,49 @@
+@import 'reset';
+
 $dark: #333;
+$darker: darken($dark, 10%);
+$shadow: darken($dark, 15%);
 $light: #fff;
 $highlight: #ffc0cb;
+$red: #f00;
+
+$font-scale: 1;
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+
+@mixin debug {
+  border: 1px dashed $red;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
 
 body {
   background-color: $dark;
   color: $light;
+  font-family: 'Gill Sans Extrabold', Helvetica, sans-serif;
+
+  a {
+    text-decoration: none;
+  }
+
+  > .ember-view {
+    height: 100%;
+  }
 }
 
 a {
@@ -12,7 +51,59 @@ a {
 }
 
 .stories-index {
-  .selected {
-    color: $highlight;
+  width: 15rem;
+
+  ul {
+    list-style-type: none;
+    width: 100%;
+  }
+
+  li {
+    list-style-type: none;
+    width: 100%;
+    padding: 1rem;
+    vertical-align: middle;
+
+    &.selected {
+      background-color: $shadow;
+      color: $highlight;
+    }
+  }
+}
+
+.story-layout {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+  .stories-index {
+    background-color: $darker;
+    display: table-cell;
+    height: 100%;
+  }
+
+  .story-body {
+    display: table-cell;
+  }
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  .row {
+    // @include debug;
+    &.header {
+      flex: 0 1 auto;
+    }
+
+    &.content {
+      flex: 1;
+    }
+
+    &.footer {
+      flex: 0 1 40px;
+    }
   }
 }
