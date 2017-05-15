@@ -17,6 +17,16 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.4rem;
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
+}
+
 
 @mixin debug {
   border: 1px dashed $red;
@@ -60,9 +70,9 @@ a {
 
   li {
     list-style-type: none;
-    width: 100%;
     padding: 1rem;
     vertical-align: middle;
+    width: 100%;
 
     &.selected {
       background-color: $shadow;
@@ -85,6 +95,10 @@ a {
   .story-body {
     display: table-cell;
   }
+}
+
+.story-body {
+  padding: 3rem;
 }
 
 .box {

@@ -1,0 +1,16 @@
+{
+  "name": "preprocessing",
+  "version": "1.0.0",
+  "description": "Take markdown files and build them into stories as json.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cory Logan",
+  "license": "ISC",
+  "devDependencies": {
+    "bluebird": "^3.5.0",
+    "marked": "^0.3.6",
+    "yaml-front-matter": "^3.4.0"
+  }
+}

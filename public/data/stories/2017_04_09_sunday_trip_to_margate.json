@@ -1,11 +1,1 @@
-{
-  "data": {
-    "type": "story",
-    "id": "2017_04_09_sunday_trip_to_margate",
-    "attributes": {
-      "date": "2017-04-09",
-      "title": "Local tourism abounds",
-      "body": "Took the train."
-    }
-  }
-}
+{"data":{"type":"story","id":"2017_04_09_sunday_trip_to_margate","attributes":{"title":"Town by the Sea","subtitle":"Local tourism abounds","date":"2017-04-06","region":"maybe","body":"<p>Took the train.</p>\n"}}}
