@@ -5,10 +5,7 @@
 			"id": "2017_04_06_arrival_in_london",
 			"attributes": {
 				"title": "I Made It",
-				"subtitle": "Yes I did",
-				"date": "2017-04-06",
-				"region": "maybe",
-				"body": "<p>The beginning of the trip was a bit of a blur. I&#39;d only just finished pizza and a glass of bourbon with a few close friends when the car to the airport arrived unexpectedly early.</p>\n<p>I grabbed some abbreviated hugs, with the overwhelming sense that I&#39;d forgotten something – but what could it have been?</p>\n<p>Walk. Wait. Check in. Gate wait. Plane. Wait. Iceland waiting. More plain waiting. And that was it. I had arrived.</p>\n<p>I got the third degree from immigration. She asked all sorts of invasive questions. How long was I staying? How much money had I brought with me? How much money did I have in the bank? Would I be working? And what the hell was I doing here? After some very skeptical looks, she stamped my passport and let me in.</p>\n"
+				"date": "2017-04-06"
 			}
 		},
 		{
@@ -16,10 +13,7 @@
 			"id": "2017_04_09_sunday_trip_to_margate",
 			"attributes": {
 				"title": "Town by the Sea",
-				"subtitle": "Local tourism abounds",
-				"date": "2017-04-06",
-				"region": "maybe",
-				"body": "<p>Took the train.</p>\n"
+				"date": "2017-04-06"
 			}
 		}
 	]

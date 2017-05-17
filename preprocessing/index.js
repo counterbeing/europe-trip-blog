@@ -21,9 +21,19 @@ fs.readdirAsync('../markdown/')
     return pathAndStory.story
   })
   .then((stories) => {
+    var index = stories.map((story) => {
+      return {
+        'type': story.type,
+        'id': story.id,
+        'attributes': {
+          'title': story.attributes.title,
+          'date': story.attributes.date
+        }
+      }
+    })
     fs.writeFile(
       '../public/data/stories.json',
-      JSON.stringify({ 'data': stories }, null, '\t')
+      JSON.stringify({ 'data': index }, null, '\t')
     )
   })
 
