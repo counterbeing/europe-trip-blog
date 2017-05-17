@@ -15,7 +15,7 @@ fs.readdirAsync('../markdown/')
   })
   .map((pathAndStory) => {
     pathAndStory.story.then( (story) => {
-      var string = JSON.stringify({'data': story})
+      var string = JSON.stringify({'data': story}, null, '\t')
       fs.writeFile(pathAndStory.path.jsonPath, string)
     })
     return pathAndStory.story
@@ -23,7 +23,7 @@ fs.readdirAsync('../markdown/')
   .then((stories) => {
     fs.writeFile(
       '../public/data/stories.json',
-      JSON.stringify({ 'data': stories })
+      JSON.stringify({ 'data': stories }, null, '\t')
     )
   })
 
