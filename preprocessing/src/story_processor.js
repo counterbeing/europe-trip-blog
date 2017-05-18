@@ -5,7 +5,8 @@ var marked = require('marked')
 var path = require('path')
 Promise.promisifyAll(fs)
 
-fs.readdirAsync('../markdown/')
+export function run() {
+  fs.readdirAsync('../markdown/')
   .map(function(fileName) {
     var pathObject = toPathObject(fileName)
     return {
@@ -36,6 +37,7 @@ fs.readdirAsync('../markdown/')
       JSON.stringify({ 'data': index }, null, '\t')
     )
   })
+}
 
 var toPathObject = (mdFile) => {
   var mdPath = path.join('../markdown/', mdFile)
@@ -63,10 +65,10 @@ var readAndProcess = (mdFile) => {
       }
     }
   })
-.catch(SyntaxError, function () {
-  console.error('invalid yaml in file')
-})
-.catch(function () {
-  console.error('unable to read file')
-})
+  .catch(SyntaxError, function () {
+    console.error('invalid yaml in file')
+  })
+  .catch(function () {
+    console.error('unable to read file')
+  })
 }
