@@ -6,46 +6,81 @@ Object.defineProperty(exports, "__esModule", {
 var fs = require('fs');
 var exif = require('exiftool');
 var Promise = require('bluebird');
+var snake = require('to-snake-case');
+var moment = require('moment');
+var path = require('path');
+// const imghash = require('imghash')
 // var path = require('path')
 Promise.promisifyAll(exif);
 Promise.promisifyAll(fs);
 
+var photosDir = '../public/photos';
+
 exports.default = {
   run: function run() {
-    fs.readdirAsync('../public/photos').filter(function (fileName) {
+    fs.readdirAsync(photosDir).filter(function (fileName) {
       return fileName.match(/\.jpg$|\.jpeg$/);
     }).map(function (fileName) {
       return fleshOutObject(fileName);
-    }).then(function (photos) {
-      console.log(photos);
+    }).map(function (photo) {
+      console.log(photo);
+      movePhoto(photo);
     });
   }
 };
 
 
+var movePhoto = function movePhoto(photoObject) {
+  var date = photoObject.dateCreated.format('YYYY-MM-DD');
+  var dateFolder = path.join(photosDir, date);
+  var newPath = newPhotoPath(photoObject, date);
+  console.log('checking for dir');
+  fs.statAsync(dateFolder).then(null, function () {
+    fs.mkdir(dateFolder);
+  }).then(function () {
+    console.log('running rename of ' + photoObject.path);
+    fs.rename(photoObject.path, newPath);
+  });
+};
+
+var newPhotoPath = function newPhotoPath(photoObject, date) {
+  var title = snake(photoObject.title);
+  return path.join(photosDir, date, title + '.jpg');
+};
+
 var fleshOutObject = function fleshOutObject(name) {
-  var path = '../public/photos/' + name;
-  var result = getExifData(path);
+  var objectPath = path.join(photosDir, name);
+  var result = getExifData(objectPath);
   return result;
 };
 
-var getExifData = function getExifData(path) {
-  return fs.readFileAsync(path).then(function (data) {
+var getExifData = function getExifData(objectPath) {
+  return fs.readFileAsync(objectPath).then(function (data) {
     return exif.metadataAsync(data);
   }).then(function (metadata) {
     var dimensionsArr = splitImageSize(metadata.imageSize);
+    // console.log(metadata)
     return {
-      path: path,
+      path: objectPath,
       title: metadata.title,
       imageWidth: dimensionsArr[0],
       imageHeight: dimensionsArr[1],
-      // imageSize: metadata.imageSize,
       caption: metadata.imageDescription,
       latitude: metadata.gpsLatitude,
-      longitude: metadata.gpsLongitude
+      longitude: metadata.gpsLongitude,
+      dateCreated: formatDate(metadata.dateCreated)
+      // phash: phashFromFile(path)
     };
   });
 };
+
+var formatDate = function formatDate(exifDateString) {
+  return moment(exifDateString, 'YYYY:MM:DD HH:mm:SS');
+};
+
+// var phashFromFile = (path) => {
+//   return imghash.hash(path)
+// }
 
 var splitImageSize = function splitImageSize(dimensions) {
   return dimensions.split('x');
