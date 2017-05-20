@@ -3,31 +3,52 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.run = run;
-function run() {
-  fs.readdirAsync('../public/photos/for_import').map(function (fileName) {
-    var pathObject = toPathObject(fileName);
+var fs = require('fs');
+var exif = require('exiftool');
+var Promise = require('bluebird');
+// var path = require('path')
+Promise.promisifyAll(exif);
+Promise.promisifyAll(fs);
+
+exports.default = {
+  run: function run() {
+    fs.readdirAsync('../public/photos').filter(function (fileName) {
+      return fileName.match(/\.jpg$|\.jpeg$/);
+    }).map(function (fileName) {
+      return fleshOutObject(fileName);
+    }).then(function (photos) {
+      console.log(photos);
+    });
+  }
+};
+
+
+var fleshOutObject = function fleshOutObject(name) {
+  var path = '../public/photos/' + name;
+  var result = getExifData(path);
+  return result;
+};
+
+var getExifData = function getExifData(path) {
+  return fs.readFileAsync(path).then(function (data) {
+    return exif.metadataAsync(data);
+  }).then(function (metadata) {
+    var dimensionsArr = splitImageSize(metadata.imageSize);
     return {
-      'path': pathObject,
-      'story': readAndProcess(pathObject)
+      path: path,
+      title: metadata.title,
+      imageWidth: dimensionsArr[0],
+      imageHeight: dimensionsArr[1],
+      // imageSize: metadata.imageSize,
+      caption: metadata.imageDescription,
+      latitude: metadata.gpsLatitude,
+      longitude: metadata.gpsLongitude
     };
-  }).map(function (pathAndStory) {
-    pathAndStory.story.then(function (story) {
-      var string = JSON.stringify({ 'data': story }, null, '\t');
-      fs.writeFile(pathAndStory.path.jsonPath, string);
-    });
-    return pathAndStory.story;
-  }).then(function (stories) {
-    var index = stories.map(function (story) {
-      return {
-        'type': story.type,
-        'id': story.id,
-        'attributes': {
-          'title': story.attributes.title,
-          'date': story.attributes.date
-        }
-      };
-    });
-    fs.writeFile('../public/data/stories.json', JSON.stringify({ 'data': index }, null, '\t'));
   });
-}
+};
+
+var splitImageSize = function splitImageSize(dimensions) {
+  return dimensions.split('x');
+};
+
+exports.default.run();

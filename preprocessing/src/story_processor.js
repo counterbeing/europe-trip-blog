@@ -52,7 +52,8 @@ var toPathObject = (mdFile) => {
 
 var readAndProcess = (mdFile) => {
   return fs.readFileAsync(mdFile.mdPath)
-  .then(yamlFront.loadFront).then(function (val) {
+  .then(yamlFront.loadFront)
+  .then(function (val) {
     return {
       'type': 'story',
       'id': mdFile.id,

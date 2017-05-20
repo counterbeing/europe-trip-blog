@@ -1,33 +1,52 @@
-export function run() {
-  fs.readdirAsync('../public/photos/for_import')
-  .map(function(fileName) {
-    var pathObject = toPathObject(fileName)
+var fs = require('fs')
+var exif = require('exiftool')
+var Promise = require('bluebird')
+// var path = require('path')
+Promise.promisifyAll(exif)
+Promise.promisifyAll(fs)
+
+export default {
+  run: () => {
+    fs.readdirAsync('../public/photos')
+      .filter((fileName) => {
+        return fileName.match(/\.jpg$|\.jpeg$/)
+      })
+      .map((fileName) => {
+        return fleshOutObject(fileName)
+      })
+      .then((photos) => {
+        console.log(photos)
+      })
+  }
+}
+
+var fleshOutObject = (name) => {
+  let path = `../public/photos/${name}`
+  let result = getExifData(path)
+  return result
+}
+
+var getExifData = (path) => {
+  return fs.readFileAsync(path)
+  .then((data) => {
+    return exif.metadataAsync(data)
+  }).then((metadata) => {
+    var dimensionsArr = splitImageSize(metadata.imageSize)
     return {
-      'path': pathObject,
-      'story': readAndProcess(pathObject)
+      path: path,
+      title: metadata.title,
+      imageWidth: dimensionsArr[0],
+      imageHeight: dimensionsArr[1],
+      // imageSize: metadata.imageSize,
+      caption: metadata.imageDescription,
+      latitude: metadata.gpsLatitude,
+      longitude: metadata.gpsLongitude
     }
   })
-  .map((pathAndStory) => {
-    pathAndStory.story.then( (story) => {
-      var string = JSON.stringify({'data': story}, null, '\t')
-      fs.writeFile(pathAndStory.path.jsonPath, string)
-    })
-    return pathAndStory.story
-  })
-  .then((stories) => {
-    var index = stories.map((story) => {
-      return {
-        'type': story.type,
-        'id': story.id,
-        'attributes': {
-          'title': story.attributes.title,
-          'date': story.attributes.date
-        }
-      }
-    })
-    fs.writeFile(
-      '../public/data/stories.json',
-      JSON.stringify({ 'data': index }, null, '\t')
-    )
-  })
 }
+
+var splitImageSize = (dimensions) => {
+  return dimensions.split('x')
+}
+
+exports.default.run()
