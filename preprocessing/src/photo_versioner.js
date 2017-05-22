@@ -2,7 +2,7 @@ var fs = require('fs')
 var Promise = require('bluebird')
 var sharp = require('sharp')
 var path = require('path')
-var mkdirp = require('mkdirp')
+var mkdirp = Promise.promisify(require('mkdirp'))
 Promise.promisifyAll(fs)
 
 let photosDir = '../public/photos'
@@ -19,15 +19,16 @@ export default (imageObject) => {
   return fs.readFileAsync(imageObject.path).then((imageBuffer) => {
     for (let [version, width] of Object.entries(imagePresets)) {
       let outfile = path.join(photosDir, version, imageObject.relativePath)
-      mkdirp(path.dirname(outfile))
-      runResize({
-        image: imageBuffer,
-        outfile: outfile,
-        width: width
+      mkdirp(path.dirname(outfile)).then(() => {
+        runResize({
+          image: imageBuffer,
+          outfile: outfile,
+          width: width
+        })
+        versions[version] = {
+          path: outfile
+        }
       })
-      versions[version] = {
-        path: outfile
-      }
     }
   })
   .then(() => {

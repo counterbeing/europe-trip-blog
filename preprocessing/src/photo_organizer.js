@@ -1,6 +1,4 @@
-// import * as photoVersioner from './photo_versioner'
 import photoVersioner from './photo_versioner'
-
 
 var fs = require('fs')
 var exif = require('exiftool')
@@ -10,7 +8,6 @@ var moment = require('moment')
 var path = require('path')
 var mkdirp = Promise.promisify(require('mkdirp'))
 // const imghash = require('imghash')
-// var path = require('path')
 Promise.promisifyAll(exif)
 Promise.promisifyAll(fs)
 
@@ -19,7 +16,7 @@ let photosDir = '../public/photos'
 export default () => {
   fs.readdirAsync(photosDir)
   .filter((fileName) => {
-    return fileName.match(/\.jpg$|\.jpeg$/)
+    return fileName.match(/\.(jpg|jpeg|JPG|JPEG)$/)
   })
   .map((fileName) => {
     return fleshOutObject(fileName)
@@ -30,10 +27,19 @@ export default () => {
   .map((photo) => {
     photoVersioner(photo).then((versions) => {
       photo.versions = versions
-      // console.log(versions)
       console.log(photo)
-      // return photo
     })
+    return photo
+  })
+  .map((photo) => {
+    return {
+      title: photo.title,
+      versions: photo.versions
+    }
+  })
+  .then((photos) => {
+    var string = JSON.stringify({'data': photos}, null, '\t')
+    fs.writeFile('../public/photos/index.json', string)
   })
 }
 
@@ -67,7 +73,6 @@ var getExifData = (objectPath) => {
     let dimensionsArr = splitImageSize(metadata.imageSize)
     let dateObject = formatDate(metadata.dateCreated)
     let formattedDate = dateObject.format('YYYY-MM-DD')
-    // console.log(metadata)
 
     return {
       path: objectPath,

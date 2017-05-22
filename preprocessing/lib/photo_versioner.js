@@ -10,7 +10,7 @@ var fs = require('fs');
 var Promise = require('bluebird');
 var sharp = require('sharp');
 var path = require('path');
-var mkdirp = require('mkdirp');
+var mkdirp = Promise.promisify(require('mkdirp'));
 Promise.promisifyAll(fs);
 
 var photosDir = '../public/photos';
@@ -30,21 +30,26 @@ exports.default = function (imageObject) {
     var _iteratorError = undefined;
 
     try {
-      for (var _iterator = Object.entries(imagePresets)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var _loop = function _loop() {
         var _step$value = _slicedToArray(_step.value, 2),
             version = _step$value[0],
             width = _step$value[1];
 
         var outfile = path.join(photosDir, version, imageObject.relativePath);
-        mkdirp(path.dirname(outfile));
-        runResize({
-          image: imageBuffer,
-          outfile: outfile,
-          width: width
+        mkdirp(path.dirname(outfile)).then(function () {
+          runResize({
+            image: imageBuffer,
+            outfile: outfile,
+            width: width
+          });
+          versions[version] = {
+            path: outfile
+          };
         });
-        versions[version] = {
-          path: outfile
-        };
+      };
+
+      for (var _iterator = Object.entries(imagePresets)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        _loop();
       }
     } catch (err) {
       _didIteratorError = true;

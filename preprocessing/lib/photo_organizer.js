@@ -10,8 +10,7 @@ var _photo_versioner2 = _interopRequireDefault(_photo_versioner);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var fs = require('fs'); // import * as photoVersioner from './photo_versioner'
-
+var fs = require('fs');
 var exif = require('exiftool');
 var Promise = require('bluebird');
 var snake = require('to-snake-case');
@@ -19,7 +18,6 @@ var moment = require('moment');
 var path = require('path');
 var mkdirp = Promise.promisify(require('mkdirp'));
 // const imghash = require('imghash')
-// var path = require('path')
 Promise.promisifyAll(exif);
 Promise.promisifyAll(fs);
 
@@ -27,7 +25,7 @@ var photosDir = '../public/photos';
 
 exports.default = function () {
   fs.readdirAsync(photosDir).filter(function (fileName) {
-    return fileName.match(/\.jpg$|\.jpeg$/);
+    return fileName.match(/\.(jpg|jpeg|JPG|JPEG)$/);
   }).map(function (fileName) {
     return fleshOutObject(fileName);
   }).map(function (photo) {
@@ -35,10 +33,17 @@ exports.default = function () {
   }).map(function (photo) {
     (0, _photo_versioner2.default)(photo).then(function (versions) {
       photo.versions = versions;
-      // console.log(versions)
       console.log(photo);
-      // return photo
     });
+    return photo;
+  }).map(function (photo) {
+    return {
+      title: photo.title,
+      versions: photo.versions
+    };
+  }).then(function (photos) {
+    var string = JSON.stringify({ 'data': photos }, null, '\t');
+    fs.writeFile('../public/photos/index.json', string);
   });
 };
 
@@ -68,7 +73,6 @@ var getExifData = function getExifData(objectPath) {
     var dimensionsArr = splitImageSize(metadata.imageSize);
     var dateObject = formatDate(metadata.dateCreated);
     var formattedDate = dateObject.format('YYYY-MM-DD');
-    // console.log(metadata)
 
     return {
       path: objectPath,
