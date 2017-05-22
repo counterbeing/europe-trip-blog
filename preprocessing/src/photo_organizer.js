@@ -1,9 +1,14 @@
+// import * as photoVersioner from './photo_versioner'
+import photoVersioner from './photo_versioner'
+
+
 var fs = require('fs')
 var exif = require('exiftool')
 var Promise = require('bluebird')
 var snake = require('to-snake-case')
 var moment = require('moment')
 var path = require('path')
+var mkdirp = Promise.promisify(require('mkdirp'))
 // const imghash = require('imghash')
 // var path = require('path')
 Promise.promisifyAll(exif)
@@ -11,40 +16,40 @@ Promise.promisifyAll(fs)
 
 let photosDir = '../public/photos'
 
-export default {
-  run: () => {
-    fs.readdirAsync(photosDir)
-      .filter((fileName) => {
-        return fileName.match(/\.jpg$|\.jpeg$/)
-      })
-      .map((fileName) => {
-        return fleshOutObject(fileName)
-      })
-      .map((photo) => {
-        console.log(photo)
-        movePhoto(photo)
-      })
-  }
+export default () => {
+  fs.readdirAsync(photosDir)
+  .filter((fileName) => {
+    return fileName.match(/\.jpg$|\.jpeg$/)
+  })
+  .map((fileName) => {
+    return fleshOutObject(fileName)
+  })
+  .map((photo) => {
+    return moveOriginal(photo)
+  })
+  .map((photo) => {
+    photoVersioner(photo).then((versions) => {
+      photo.versions = versions
+      // console.log(versions)
+      console.log(photo)
+      // return photo
+    })
+  })
 }
 
-var movePhoto = (photoObject) => {
-  let date = photoObject.dateCreated.format('YYYY-MM-DD')
-  let dateFolder = path.join(photosDir, date)
-  let newPath = newPhotoPath(photoObject, date)
-  console.log('checking for dir')
-  fs.statAsync(dateFolder)
-    .then(null, () => {
-      fs.mkdir(dateFolder)
-    })
+var moveOriginal = (photoObject) => {
+  let newPath = path.join(photosDir, 'original', photoObject.relativePath)
+
+  return mkdirp(path.dirname(newPath))
     .then(() => {
-      console.log('running rename of ' + photoObject.path)
       fs.rename(photoObject.path, newPath)
     })
-}
-
-var newPhotoPath = (photoObject, date) => {
-  let title = snake(photoObject.title)
-  return path.join(photosDir, date, title + '.jpg')
+    .then(() => {
+      photoObject.path = newPath
+      return photoObject
+    })
+  // photoObject.path = newPath
+  // return photoObject
 }
 
 var fleshOutObject = (name) => {
@@ -59,17 +64,22 @@ var getExifData = (objectPath) => {
     return exif.metadataAsync(data)
   })
   .then((metadata) => {
-    var dimensionsArr = splitImageSize(metadata.imageSize)
+    let dimensionsArr = splitImageSize(metadata.imageSize)
+    let dateObject = formatDate(metadata.dateCreated)
+    let formattedDate = dateObject.format('YYYY-MM-DD')
     // console.log(metadata)
+
     return {
       path: objectPath,
+      relativePath: path.join(formattedDate, snake(metadata.title) + '.jpg'),
       title: metadata.title,
       imageWidth: dimensionsArr[0],
       imageHeight: dimensionsArr[1],
       caption: metadata.imageDescription,
       latitude: metadata.gpsLatitude,
       longitude: metadata.gpsLongitude,
-      dateCreated: formatDate(metadata.dateCreated)
+      createdAt: dateObject,
+      dateCreated: formattedDate
       // phash: phashFromFile(path)
     }
   })
@@ -87,4 +97,4 @@ var splitImageSize = (dimensions) => {
   return dimensions.split('x')
 }
 
-exports.default.run()
+exports.default()
