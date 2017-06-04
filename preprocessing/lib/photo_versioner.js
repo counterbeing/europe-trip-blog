@@ -12,6 +12,7 @@ var sharp = require('sharp');
 var path = require('path');
 var mkdirp = Promise.promisify(require('mkdirp'));
 Promise.promisifyAll(fs);
+Promise.promisifyAll(sharp);
 
 var photosDir = '../public/photos';
 
@@ -23,7 +24,7 @@ var imagePresets = {
 };
 
 exports.default = function (imageObject) {
-  var versions = {};
+  var versions = { initial: 'fuckeay' };
   return fs.readFileAsync(imageObject.path).then(function (imageBuffer) {
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
@@ -37,11 +38,14 @@ exports.default = function (imageObject) {
 
         var outfile = path.join(photosDir, version, imageObject.relativePath);
         mkdirp(path.dirname(outfile)).then(function () {
+          console.log('Running resize for ' + version);
           runResize({
             image: imageBuffer,
             outfile: outfile,
             width: width
           });
+        }).then(function () {
+          console.log('Writing version metadata ' + version);
           versions[version] = {
             path: outfile
           };
@@ -66,12 +70,14 @@ exports.default = function (imageObject) {
       }
     }
   }).then(function () {
+    console.log('then versions: ');
+    console.log(versions);
     return versions;
   });
 };
 
 var runResize = function runResize(config) {
-  console.log(config);
+  // console.log(config)
   return sharp(config.image).resize(config.width).withMetadata().toFile(config.outfile).then(function () {
     // console.log(data)
   }).catch(function (err) {

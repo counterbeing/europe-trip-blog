@@ -17,6 +17,7 @@ var snake = require('to-snake-case');
 var moment = require('moment');
 var path = require('path');
 var mkdirp = Promise.promisify(require('mkdirp'));
+var chalk = require('chalk');
 // const imghash = require('imghash')
 Promise.promisifyAll(exif);
 Promise.promisifyAll(fs);
@@ -31,18 +32,23 @@ exports.default = function () {
   }).map(function (photo) {
     return moveOriginal(photo);
   }).map(function (photo) {
-    (0, _photo_versioner2.default)(photo).then(function (versions) {
+    var res = (0, _photo_versioner2.default)(photo).then(function (versions) {
+      console.log(chalk.green(JSON.stringify(versions)));
       photo.versions = versions;
       console.log(photo);
+      return photo;
     });
-    return photo;
+
+    console.log('RESULTS');
+    console.log(res);
+    return res;
   }).map(function (photo) {
-    return {
+    return Promise.props({
       title: photo.title,
       versions: photo.versions
-    };
-  }).then(function (photos) {
-    var string = JSON.stringify({ 'data': photos }, null, '\t');
+    });
+  }).then(function (metadata) {
+    var string = JSON.stringify({ 'data': metadata }, null, '\t');
     fs.writeFile('../public/photos/index.json', string);
   });
 };
