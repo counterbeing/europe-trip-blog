@@ -1,52 +1,58 @@
-var fs = require('fs')
 var Promise = require('bluebird')
+var fs = require('fs')
 var sharp = require('sharp')
 var path = require('path')
 var mkdirp = Promise.promisify(require('mkdirp'))
+var chalk = require('chalk')
+
 Promise.promisifyAll(fs)
 Promise.promisifyAll(sharp)
 
 let photosDir = '../public/photos'
 
-let imagePresets = {
-  thumb: 100,
-  medium: 800,
-  large: 1200,
-  huge: 1600
-}
+let imagePresets = [
+  [ 'thumb', 100 ],
+  [ 'medium', 800 ],
+  [ 'large', 1200],
+  [ 'huge', 1600 ]
+]
 
 export default (imageObject) => {
-  let versions = { initial: 'fuckeay' }
   return fs.readFileAsync(imageObject.path)
   .then((imageBuffer) => {
-    for (let [version, width] of Object.entries(imagePresets)) {
-      let outfile = path.join(photosDir, version, imageObject.relativePath)
-      mkdirp(path.dirname(outfile))
-      .then(() => {
-        console.log('Running resize for ' + version)
-        runResize({
-          image: imageBuffer,
-          outfile: outfile,
-          width: width
-        })
-      })
-      .then(() => {
-        console.log('Writing version metadata ' + version)
-        versions[version] = {
-          path: outfile
-        }
-      })
-    }
+    return promiseAllVersions(imageObject, imageBuffer)
   })
-  .then(() => {
-    console.log('then versions: ')
-    console.log(versions)
-    return versions
+  .then((result) => {
+    console.log(chalk.blue(result))
+    return 'fuck me right'
+  })
+  .catch(() => {
+    console.log('Image resize failed.')
+  })
+}
+
+var promiseAllVersions = (imageObject, imageBuffer) => {
+  return Promise.all(imagePresets, item => {
+    let version = item[0]
+    let width   = item[1]
+    let outfile = path.join(photosDir, version, imageObject.relativePath)
+    return mkdirp(path.dirname(outfile))
+    .then(() => {
+      console.log(chalk.red(outfile))
+      runResize({
+        image: imageBuffer,
+        outfile: outfile,
+        width: width
+      })
+    })
+    .then(() => {
+      console.log('Writing version metadata ' + version)
+      return 'HERE I AM'
+    })
   })
 }
 
 var runResize = (config) => {
-  // console.log(config)
   return sharp(config.image)
     .resize(config.width)
     .withMetadata()

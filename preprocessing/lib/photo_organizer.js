@@ -35,12 +35,9 @@ exports.default = function () {
     var res = (0, _photo_versioner2.default)(photo).then(function (versions) {
       console.log(chalk.green(JSON.stringify(versions)));
       photo.versions = versions;
-      console.log(photo);
+      // console.log(photo)
       return photo;
     });
-
-    console.log('RESULTS');
-    console.log(res);
     return res;
   }).map(function (photo) {
     return Promise.props({
@@ -49,6 +46,7 @@ exports.default = function () {
     });
   }).then(function (metadata) {
     var string = JSON.stringify({ 'data': metadata }, null, '\t');
+    console.log('doing write of metadata');
     fs.writeFile('../public/photos/index.json', string);
   });
 };

@@ -30,12 +30,9 @@ export default () => {
     .then((versions) => {
       console.log(chalk.green(JSON.stringify(versions)))
       photo.versions = versions
-      console.log(photo)
+      // console.log(photo)
       return photo
     })
-
-    console.log('RESULTS')
-    console.log(res)
     return res
   })
   .map((photo) => {
@@ -46,6 +43,7 @@ export default () => {
   })
   .then((metadata) => {
     var string = JSON.stringify({'data': metadata}, null, '\t')
+    console.log('doing write of metadata')
     fs.writeFile('../public/photos/index.json', string)
   })
 }
