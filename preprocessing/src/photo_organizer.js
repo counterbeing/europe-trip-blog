@@ -1,4 +1,5 @@
 import photoVersioner from './photo_versioner'
+import photoQueries from './photo_queries'
 
 var fs = require('fs')
 var exif = require('exiftool')
@@ -44,13 +45,13 @@ export default () => {
     })
   })
   .then((metadata) => {
-    var string = JSON.stringify({'data': metadata}, null, '\t')
-    fs.writeFile('../public/photos/index.json', string)
+    photoQueries(metadata)
   })
 }
 
 var moveOriginal = (photoObject) => {
-  let newPath = path.join(photosDir, 'original', photoObject.relativePath)
+  let newPath = path.join(
+    photosDir, photoObject.dateCreated, 'original', photoObject.relativePath)
 
   return mkdirp(path.dirname(newPath))
     .then(() => {
@@ -60,8 +61,6 @@ var moveOriginal = (photoObject) => {
       photoObject.path = newPath
       return photoObject
     })
-  // photoObject.path = newPath
-  // return photoObject
 }
 
 var fleshOutObject = (name) => {
@@ -82,7 +81,7 @@ var getExifData = (objectPath) => {
 
     return {
       path: objectPath,
-      relativePath: path.join(formattedDate, snake(metadata.title) + '.jpg'),
+      relativePath: path.join(snake(metadata.title) + '.jpg'),
       title: metadata.title,
       imageWidth: dimensionsArr[0],
       imageHeight: dimensionsArr[1],

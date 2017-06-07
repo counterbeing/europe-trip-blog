@@ -8,6 +8,10 @@ var _photo_versioner = require('./photo_versioner');
 
 var _photo_versioner2 = _interopRequireDefault(_photo_versioner);
 
+var _photo_queries = require('./photo_queries');
+
+var _photo_queries2 = _interopRequireDefault(_photo_queries);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var fs = require('fs');
@@ -47,13 +51,12 @@ exports.default = function () {
       versions: photo.versions
     });
   }).then(function (metadata) {
-    var string = JSON.stringify({ 'data': metadata }, null, '\t');
-    fs.writeFile('../public/photos/index.json', string);
+    (0, _photo_queries2.default)(metadata);
   });
 };
 
 var moveOriginal = function moveOriginal(photoObject) {
-  var newPath = path.join(photosDir, 'original', photoObject.relativePath);
+  var newPath = path.join(photosDir, photoObject.dateCreated, 'original', photoObject.relativePath);
 
   return mkdirp(path.dirname(newPath)).then(function () {
     fs.rename(photoObject.path, newPath);
@@ -61,8 +64,6 @@ var moveOriginal = function moveOriginal(photoObject) {
     photoObject.path = newPath;
     return photoObject;
   });
-  // photoObject.path = newPath
-  // return photoObject
 };
 
 var fleshOutObject = function fleshOutObject(name) {
@@ -81,7 +82,7 @@ var getExifData = function getExifData(objectPath) {
 
     return {
       path: objectPath,
-      relativePath: path.join(formattedDate, snake(metadata.title) + '.jpg'),
+      relativePath: path.join(snake(metadata.title) + '.jpg'),
       title: metadata.title,
       imageWidth: dimensionsArr[0],
       imageHeight: dimensionsArr[1],

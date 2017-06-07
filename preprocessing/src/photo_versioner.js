@@ -40,7 +40,9 @@ var promisedSizes = (imageObject, imageBuffer) => {
   return Promise.map(imagePresets, item => {
     let version = item[0]
     let width   = item[1]
-    let outfile = path.join(photosDir, version, imageObject.relativePath)
+    let outfile = path.join(
+       photosDir, imageObject.dateCreated, version, imageObject.relativePath
+    )
     return mkdirp(path.dirname(outfile))
     .then(() => {
       runResize({

@@ -37,7 +37,7 @@ var promisedSizes = function promisedSizes(imageObject, imageBuffer) {
   return Promise.map(imagePresets, function (item) {
     var version = item[0];
     var width = item[1];
-    var outfile = path.join(photosDir, version, imageObject.relativePath);
+    var outfile = path.join(photosDir, imageObject.dateCreated, version, imageObject.relativePath);
     return mkdirp(path.dirname(outfile)).then(function () {
       runResize({
         image: imageBuffer,
