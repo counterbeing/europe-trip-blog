@@ -7,8 +7,8 @@ var snake = require('to-snake-case')
 var moment = require('moment')
 var path = require('path')
 var mkdirp = Promise.promisify(require('mkdirp'))
-var chalk = require('chalk')
-// const imghash = require('imghash')
+// var chalk = require('chalk')
+const imghash = require('imghash')
 Promise.promisifyAll(exif)
 Promise.promisifyAll(fs)
 
@@ -28,22 +28,23 @@ export default () => {
   .map((photo) => {
     let res = photoVersioner(photo)
     .then((versions) => {
-      console.log(chalk.green(JSON.stringify(versions)))
       photo.versions = versions
-      // console.log(photo)
       return photo
     })
     return res
   })
   .map((photo) => {
+    console.log(photo)
     return Promise.props({
       title: photo.title,
+      caption: photo.caption,
+      phash: photo.phash,
+      dateCreated: photo.dateCreated,
       versions: photo.versions
     })
   })
   .then((metadata) => {
     var string = JSON.stringify({'data': metadata}, null, '\t')
-    console.log('doing write of metadata')
     fs.writeFile('../public/photos/index.json', string)
   })
 }
@@ -89,8 +90,8 @@ var getExifData = (objectPath) => {
       latitude: metadata.gpsLatitude,
       longitude: metadata.gpsLongitude,
       createdAt: dateObject,
-      dateCreated: formattedDate
-      // phash: phashFromFile(path)
+      dateCreated: formattedDate,
+      phash: phashFromFile(objectPath)
     }
   })
 }
@@ -99,9 +100,9 @@ var formatDate = (exifDateString) => {
   return moment(exifDateString, 'YYYY:MM:DD HH:mm:SS')
 }
 
-// var phashFromFile = (path) => {
-//   return imghash.hash(path)
-// }
+var phashFromFile = (path) => {
+  return imghash.hash(path)
+}
 
 var splitImageSize = (dimensions) => {
   return dimensions.split('x')
