@@ -20,34 +20,35 @@ let imagePresets = [
 export default (imageObject) => {
   return fs.readFileAsync(imageObject.path)
   .then((imageBuffer) => {
-    return promiseAllVersions(imageObject, imageBuffer)
+    return Promise.all(promisedSizes(imageObject, imageBuffer))
   })
   .then((result) => {
-    console.log(chalk.blue(result))
-    return 'fuck me right'
+    return Promise.reduce(result, (total, chunk) => {
+      let version = chunk.version
+      let outfile = chunk.outfile
+      total[version] = outfile
+      return total
+    }, {})
   })
-  .catch(() => {
-    console.log('Image resize failed.')
+  .catch((error) => {
+    console.log(chalk.red('Image resize failed.'))
+    console.log(chalk.red(error))
   })
 }
 
-var promiseAllVersions = (imageObject, imageBuffer) => {
-  return Promise.all(imagePresets, item => {
+var promisedSizes = (imageObject, imageBuffer) => {
+  return Promise.map(imagePresets, item => {
     let version = item[0]
     let width   = item[1]
     let outfile = path.join(photosDir, version, imageObject.relativePath)
     return mkdirp(path.dirname(outfile))
     .then(() => {
-      console.log(chalk.red(outfile))
       runResize({
         image: imageBuffer,
         outfile: outfile,
         width: width
       })
-    })
-    .then(() => {
-      console.log('Writing version metadata ' + version)
-      return 'HERE I AM'
+      return { version: version, outfile: outfile }
     })
   })
 }
