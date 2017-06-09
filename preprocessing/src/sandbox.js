@@ -1,20 +1,5 @@
-var Promise = require('bluebird')
+// Just getting the hang of testing in JS
 
-let imagePresets = [
-  { thumb: 100 },
-  { medium: 800 },
-  { large: 1200},
-  { huge: 1600 }
-]
-
-
-function process() {
-  return Promise.map(imagePresets, item => {
-    return item
-  })
+export default(num) => {
+  return (num + 1)
 }
-
-process().then(result => {
-  console.log('result:')
-  console.log(result)
-})

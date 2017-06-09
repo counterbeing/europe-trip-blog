@@ -4,7 +4,8 @@
   "description": "Take markdown files and build them into stories as json.",
   "main": "index.js",
   "scripts": {
-    "preprocess": "babel src --watch --out-dir lib"
+    "preprocess": "babel src --watch --out-dir lib",
+    "test": "babel src --out-dir lib && mocha --compilers js:babel-core/register"
   },
   "author": "Cory Logan",
   "license": "ISC",
@@ -22,6 +23,7 @@
     "moment": "^2.18.1",
     "pixelated-svg": "^1.0.1",
     "sharp": "^0.17.3",
+    "sinon": "^2.3.2",
     "to-snake-case": "^1.0.0",
     "yaml-front-matter": "^3.4.0"
   }
