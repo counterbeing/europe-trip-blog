@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "preprocess": "babel src --watch --out-dir lib",
-    "test": "babel src --out-dir lib && mocha --compilers js:babel-core/register"
+    "test": "babel src --out-dir lib && mocha --compilers js:babel-core/register",
+    "dtest": "babel src --out-dir lib && mocha debug --compilers js:babel-core/register"
   },
   "author": "Cory Logan",
   "license": "ISC",
