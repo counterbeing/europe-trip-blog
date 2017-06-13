@@ -1,21 +1,34 @@
 var fs = require('fs')
 var Promise = require('bluebird')
-var mkdirp = Promise.promisify(require('mkdirp'))
+// var mkdirp = Promise.promisify(require('mkdirp'))
 Promise.promisifyAll(fs)
+import jsonWriter from './json_writer'
+// var jsonWriter = require('./json_writer')
 
 
-export default(metadata) => {
-  masterIndex(metadata)
-  dateIndex(metadata)
+export default {
+  run: (metadata) => {
+    return Promise.all(
+      [
+        masterIndex(metadata),
+        dateIndex(metadata)
+      ]
+    )
+  },
+  masterIndex: (metadata) => {
+    return masterIndex(metadata)
+  },
+  dateIndex: (metadata) => {
+    return dateIndex(metadata)
+  }
 }
 
 var masterIndex = (metadata) => {
-  var string = JSON.stringify({'data': metadata}, null, '\t')
-  fs.writeFile('../public/photos/index.json', string)
+  return jsonWriter('../public/photos/index.json', metadata)
 }
 
 var dateIndex = (metadata) => {
-  Promise.reduce(metadata, (set, item) => {
+  return Promise.reduce(metadata, (set, item) => {
     set.add(item.dateCreated)
     return set
   }, new Set())
@@ -25,10 +38,7 @@ var dateIndex = (metadata) => {
     })
     .then((metadata) => {
       let dir = '../public/photos/' + date
-      let string = JSON.stringify({'data': metadata}, null, '\t')
-      mkdirp(dir).then(() => {
-        fs.writeFile(dir + '/index.json', string)
-      })
+      jsonWriter(dir + '/index.json', metadata)
     })
   })
 }

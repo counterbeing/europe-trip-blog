@@ -1,6 +1,9 @@
-var assert = require('assert')
-var fs = require('fs')
-var sinon = require('sinon')
+import assert from 'assert'
+import sinon from 'sinon'
+import * as jsonWriter from '../lib/json_writer'
+import proxyquire from 'proxyquire'
+// var spy = sinon.spy()
+// proxyquire('../lib/photo_queries', { './json_writer': spy })
 import photoQueries from '../lib/photo_queries'
 
 var metadata = [
@@ -41,18 +44,17 @@ var metadata = [
     }
   }
 ]
-
-describe('masterIndex', function() {
+describe.only('masterIndex', function() {
   var spy
   before(function () {
-    spy = sinon.spy(fs, 'writeFile')
+    spy = sinon.spy()
+    jsonWriter.default = spy
+    // proxyquire('../lib/photo_queries', { './json_writer': spy })
   })
   it('writes out all image files', function() {
-    photoQueries(metadata)
-    // spy.restore()
-    // sinon.assert.calledWith(spy, metadata)
-    // assert.equal(metadata, spy)
-    // console.log(spy.args)
-    assert.equal(spy.args.length, 3)
+    return photoQueries.masterIndex(metadata).then(function() {
+      // console.log('was spy called? ' + spy.called)
+      assert.equal(spy.args.length, 3)
+    })
   })
 })

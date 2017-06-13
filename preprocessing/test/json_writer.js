@@ -11,7 +11,7 @@ var contents =
 	}
 }`
 
-describe.only('jsonWriter', function() {
+describe('jsonWriter', function() {
   var spy
   before(function () {
     spy = sinon.spy(fs, 'writeFile')
