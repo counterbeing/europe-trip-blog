@@ -1,9 +1,7 @@
 var fs = require('fs')
 var Promise = require('bluebird')
-// var mkdirp = Promise.promisify(require('mkdirp'))
 Promise.promisifyAll(fs)
 import jsonWriter from './json_writer'
-// var jsonWriter = require('./json_writer')
 
 
 export default {
@@ -24,7 +22,7 @@ export default {
 }
 
 var masterIndex = (metadata) => {
-  return jsonWriter('../public/photos/index.json', metadata)
+  return jsonWriter.run('../public/photos/index.json', metadata)
 }
 
 var dateIndex = (metadata) => {
@@ -33,12 +31,13 @@ var dateIndex = (metadata) => {
     return set
   }, new Set())
   .map((date) => {
-    Promise.filter(metadata, (imageObject) => {
+    return Promise.filter(metadata, (imageObject) => {
       return imageObject.dateCreated == date
     })
     .then((metadata) => {
+      console.log('running')
       let dir = '../public/photos/' + date
-      jsonWriter(dir + '/index.json', metadata)
+      return jsonWriter.run(dir + '/index.json', metadata)
     })
   })
 }

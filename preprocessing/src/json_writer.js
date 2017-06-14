@@ -4,7 +4,7 @@ var mkdirp = Promise.promisify(require('mkdirp'))
 var path = require('path')
 Promise.promisifyAll(fs)
 
-export default(filePath, object) => {
+var run = (filePath, object) => {
   let string = JSON.stringify({'data': object}, null, '\t')
   let dir = path.dirname(filePath)
   return mkdirp(dir).then(() => {
@@ -13,3 +13,5 @@ export default(filePath, object) => {
     console.log('Failed to write json file: ' + reason)
   })
 }
+
+module.exports = { run: run }

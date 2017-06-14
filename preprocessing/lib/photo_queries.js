@@ -12,12 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var fs = require('fs');
 var Promise = require('bluebird');
-// var mkdirp = Promise.promisify(require('mkdirp'))
 Promise.promisifyAll(fs);
-
-// var jsonWriter = require('./json_writer')
-
-
 exports.default = {
   run: function run(metadata) {
     return Promise.all([_masterIndex(metadata), _dateIndex(metadata)]);
@@ -32,7 +27,7 @@ exports.default = {
 
 
 var _masterIndex = function _masterIndex(metadata) {
-  return (0, _json_writer2.default)('../public/photos/index.json', metadata);
+  return _json_writer2.default.run('../public/photos/index.json', metadata);
 };
 
 var _dateIndex = function _dateIndex(metadata) {
@@ -40,11 +35,12 @@ var _dateIndex = function _dateIndex(metadata) {
     set.add(item.dateCreated);
     return set;
   }, new Set()).map(function (date) {
-    Promise.filter(metadata, function (imageObject) {
+    return Promise.filter(metadata, function (imageObject) {
       return imageObject.dateCreated == date;
     }).then(function (metadata) {
+      console.log('running');
       var dir = '../public/photos/' + date;
-      (0, _json_writer2.default)(dir + '/index.json', metadata);
+      return _json_writer2.default.run(dir + '/index.json', metadata);
     });
   });
 };

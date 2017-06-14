@@ -18,7 +18,7 @@ describe('jsonWriter', function() {
     return spy
   })
   it('should write a JSON file', function() {
-    return jsonWriter('fake_file.json', object).then(function(){
+    return jsonWriter.run('fake_file.json', object).then(function(){
       assert.equal(spy.args[0].length, 2)
       assert.equal(spy.args[0][1], contents)
     })

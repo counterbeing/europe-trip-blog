@@ -1,9 +1,7 @@
 import assert from 'assert'
 import sinon from 'sinon'
-import * as jsonWriter from '../lib/json_writer'
-import proxyquire from 'proxyquire'
+import jsonWriter from '../lib/json_writer'
 // var spy = sinon.spy()
-// proxyquire('../lib/photo_queries', { './json_writer': spy })
 import photoQueries from '../lib/photo_queries'
 
 var metadata = [
@@ -44,17 +42,41 @@ var metadata = [
     }
   }
 ]
-describe.only('masterIndex', function() {
-  var spy
-  before(function () {
-    spy = sinon.spy()
-    jsonWriter.default = spy
-    // proxyquire('../lib/photo_queries', { './json_writer': spy })
+
+describe('running queries for json index generation', function() {
+  var mock
+  var expectation
+  beforeEach(function () {
+    var promise = new Promise(function(resolve) { return resolve('yay') })
+    mock = sinon.mock(jsonWriter)
+    expectation = mock.expects('run')
+    expectation.returns(promise)
   })
-  it('writes out all image files', function() {
-    return photoQueries.masterIndex(metadata).then(function() {
-      // console.log('was spy called? ' + spy.called)
-      assert.equal(spy.args.length, 3)
+  afterEach(function(){
+    mock.restore()
+  })
+
+  describe('masterIndex', function() {
+    it('writes out all image files', function() {
+      return photoQueries.masterIndex(metadata).then(function() {
+        assert.equal(expectation.args[0][1].length, 3)
+        // assertArgsLengthIsEqual(expectation, 3)
+      })
+    })
+  })
+
+  describe('dateIndex', function() {
+    it('writes out images for a specific date', function() {
+      expectation.twice()
+      return photoQueries.dateIndex(metadata).then(function() {
+        assert.equal(expectation.args[0][1].length, 2)
+        assert.equal(expectation.args[1][1].length, 1)
+      })
     })
   })
 })
+
+// var assertArgsLengthIsEqual = function(mock, num) {
+//   // how many images are included?
+//   assert.equal(mock.args[0][1].length, num)
+// }
