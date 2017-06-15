@@ -1,3 +1,6 @@
+// Accepts metadata in the form of a massive array of objects
+// and then spits out pre filtered json files for any needed
+// API endpoint for photos.
 var fs = require('fs')
 var Promise = require('bluebird')
 Promise.promisifyAll(fs)
