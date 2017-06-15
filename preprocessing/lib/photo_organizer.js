@@ -51,12 +51,13 @@ exports.default = function () {
       versions: photo.versions
     });
   }).then(function (metadata) {
-    (0, _photo_queries2.default)(metadata);
+    _photo_queries2.default.run(metadata);
   });
 };
 
 var moveOriginal = function moveOriginal(photoObject) {
   var newPath = path.join(photosDir, photoObject.dateCreated, 'original', photoObject.relativePath);
+  console.log(newPath);
 
   return mkdirp(path.dirname(newPath)).then(function () {
     fs.rename(photoObject.path, newPath);

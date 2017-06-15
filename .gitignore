@@ -18,3 +18,4 @@ npm-debug.log*
 testem.log
 
 *_git_ignore
+preprocessing/test/tmp*

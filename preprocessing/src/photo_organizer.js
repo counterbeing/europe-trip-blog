@@ -45,13 +45,14 @@ export default () => {
     })
   })
   .then((metadata) => {
-    photoQueries(metadata)
+    photoQueries.run(metadata)
   })
 }
 
 var moveOriginal = (photoObject) => {
   let newPath = path.join(
     photosDir, photoObject.dateCreated, 'original', photoObject.relativePath)
+  console.log(newPath)
 
   return mkdirp(path.dirname(newPath))
     .then(() => {

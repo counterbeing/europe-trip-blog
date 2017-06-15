@@ -4,6 +4,7 @@
   "description": "Take markdown files and build them into stories as json.",
   "main": "index.js",
   "scripts": {
+    "all": "babel src --out-dir lib && node --harmony lib/index.js",
     "preprocess": "babel src --watch --out-dir lib",
     "test": "babel src --out-dir lib && mocha --compilers js:babel-core/register",
     "dtest": "babel src --out-dir lib && mocha debug --compilers js:babel-core/register"
@@ -23,10 +24,12 @@
     "mocha": "^3.4.2",
     "moment": "^2.18.1",
     "pixelated-svg": "^1.0.1",
-    "proxyquire": "^1.8.0",
     "sharp": "^0.17.3",
     "sinon": "^2.3.2",
     "to-snake-case": "^1.0.0",
     "yaml-front-matter": "^3.4.0"
+  },
+  "dependencies": {
+    "fs-extra": "^3.0.1"
   }
 }
