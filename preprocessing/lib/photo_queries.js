@@ -17,9 +17,11 @@ exports.default = {
   run: function run(metadata) {
     return Promise.all([_masterIndex(metadata), _dateIndex(metadata)]);
   },
+
   masterIndex: function masterIndex(metadata) {
     return _masterIndex(metadata);
   },
+
   dateIndex: function dateIndex(metadata) {
     return _dateIndex(metadata);
   }
@@ -38,7 +40,6 @@ var _dateIndex = function _dateIndex(metadata) {
     return Promise.filter(metadata, function (imageObject) {
       return imageObject.dateCreated == date;
     }).then(function (metadata) {
-      console.log('running');
       var dir = '../public/photos/' + date;
       return _json_writer2.default.run(dir + '/index.json', metadata);
     });

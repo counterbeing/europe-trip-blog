@@ -56,6 +56,13 @@ describe('running queries for json index generation', function() {
     mock.restore()
   })
 
+  describe('run', function() {
+    it('writes out all files', function() {
+      expectation.exactly(3)
+      return photoQueries.run(metadata).then(function() {})
+    })
+  })
+
   describe('masterIndex', function() {
     it('writes out all image files', function() {
       return photoQueries.masterIndex(metadata).then(function() {

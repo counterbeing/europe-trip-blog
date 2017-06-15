@@ -3,7 +3,6 @@ var Promise = require('bluebird')
 Promise.promisifyAll(fs)
 import jsonWriter from './json_writer'
 
-
 export default {
   run: (metadata) => {
     return Promise.all(
@@ -13,9 +12,11 @@ export default {
       ]
     )
   },
+
   masterIndex: (metadata) => {
     return masterIndex(metadata)
   },
+
   dateIndex: (metadata) => {
     return dateIndex(metadata)
   }
@@ -35,7 +36,6 @@ var dateIndex = (metadata) => {
       return imageObject.dateCreated == date
     })
     .then((metadata) => {
-      console.log('running')
       let dir = '../public/photos/' + date
       return jsonWriter.run(dir + '/index.json', metadata)
     })
