@@ -1,7 +1,6 @@
 import assert from 'assert'
 import sinon from 'sinon'
 import jsonWriter from '../lib/json_writer'
-// var spy = sinon.spy()
 import photoQueries from '../lib/photo_queries'
 
 var metadata = [
@@ -67,7 +66,6 @@ describe('running queries for json index generation', function() {
     it('writes out all image files', function() {
       return photoQueries.masterIndex(metadata).then(function() {
         assert.equal(expectation.args[0][1].length, 3)
-        // assertArgsLengthIsEqual(expectation, 3)
       })
     })
   })
@@ -82,8 +80,3 @@ describe('running queries for json index generation', function() {
     })
   })
 })
-
-// var assertArgsLengthIsEqual = function(mock, num) {
-//   // how many images are included?
-//   assert.equal(mock.args[0][1].length, num)
-// }
