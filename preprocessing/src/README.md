@@ -1,4 +1,5 @@
 ## Overview of Photo Processing
+
 - Calculate the phash of the image to determine if it exists already or, if it needs to be processed.
 - Process versions if required.
 - Extract metadata from the original files.
@@ -11,3 +12,12 @@
     - datetimeCreated
     - filename
     - phash
+
+
+## Overview of Story Processing
+
+- Write to markdown file
+- Generate JSON file including body and metadata
+- Create list of photos that exist in a story
+  - Gather the metadata from those
+  - Maybe that goes into the actual file, maybe they're fetched separately.
