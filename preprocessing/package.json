@@ -6,7 +6,7 @@
   "scripts": {
     "all": "babel src --out-dir lib && node --harmony lib/index.js",
     "preprocess": "babel src --watch --out-dir lib",
-    "test": "babel src --out-dir lib && mocha --compilers js:babel-core/register",
+    "test": "babel src --out-dir lib > /dev/null && mocha --compilers js:babel-core/register",
     "dtest": "babel src --out-dir lib && mocha debug --compilers js:babel-core/register"
   },
   "author": "Cory Logan",
