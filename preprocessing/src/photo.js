@@ -18,13 +18,9 @@ class Photo {
       this.exifData(),
       phashFromFile(this.filePath),
       (exif, phash) => {
-        return Object.assign( exif, {phash: phash} )
+        return Object.assign(exif, {phash: phash} )
       }
     )
-  }
-
-  phash() {
-    return { phash: phashFromFile(this.filePath) }
   }
 
   exifData() {

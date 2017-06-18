@@ -55,11 +55,6 @@ var Photo = function () {
       });
     }
   }, {
-    key: 'phash',
-    value: function phash() {
-      return { phash: phashFromFile(this.filePath) };
-    }
-  }, {
     key: 'exifData',
     value: function exifData() {
       var _this = this;

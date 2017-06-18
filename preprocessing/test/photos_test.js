@@ -3,8 +3,7 @@ import fs from 'fs-extra'
 import Photo from '../lib/photo'
 // import sinon from 'sinon'
 
-
-describe.only('Photo', function() {
+describe('Photo', function() {
   beforeEach(function () {
     fs.copySync(
       'test/fixtures/public',
@@ -17,13 +16,6 @@ describe.only('Photo', function() {
     return photo.metaData().then(function(result) {
       assert.equal(result.phash, 'f8c0c525a383c1f0')
       assert.equal(result.title, 'Chilling on the Ferry')
-    })
-  })
-
-  it('generates a phash for the image', function() {
-    var photo = new Photo('test/tmp/public/photos/IMG_0150.jpg')
-    return photo.phash().phash.then(function(result) {
-      assert.equal(result, 'f8c0c525a383c1f0')
     })
   })
 
