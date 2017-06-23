@@ -4,29 +4,20 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var Promise = require('bluebird');
-var fs = require('fs');
+var fs = require('fs-extra');
 var sharp = require('sharp');
 var path = require('path');
-var mkdirp = Promise.promisify(require('mkdirp'));
 var chalk = require('chalk');
 
 Promise.promisifyAll(fs);
-Promise.promisifyAll(sharp);
 
-var photosDir = '../public/photos';
+var config = require('../config/' + (process.env.NODE_ENV || 'development'));
 
 var imagePresets = [['thumb', 100], ['medium', 800], ['large', 1200], ['huge', 1600]];
 
 exports.default = function (imageObject) {
-  return fs.readFileAsync(imageObject.path).then(function (imageBuffer) {
-    return Promise.all(promisedSizes(imageObject, imageBuffer));
-  }).then(function (result) {
-    return Promise.reduce(result, function (total, chunk) {
-      var version = chunk.version;
-      var outfile = chunk.outfile;
-      total[version] = outfile;
-      return total;
-    }, {});
+  return fs.readFileAsync(imageObject.filePath).then(function (imageBuffer) {
+    return Promise.all(promisedSizes(imageObject, imageBuffer, config.photosDir));
   }).catch(function (error) {
     console.log(chalk.red('Image resize failed.'));
     console.log(chalk.red(error));
@@ -37,22 +28,22 @@ var promisedSizes = function promisedSizes(imageObject, imageBuffer) {
   return Promise.map(imagePresets, function (item) {
     var version = item[0];
     var width = item[1];
-    var outfile = path.join(photosDir, imageObject.dateCreated, version, imageObject.relativePath);
-    return mkdirp(path.dirname(outfile)).then(function () {
-      runResize({
-        image: imageBuffer,
-        outfile: outfile,
-        width: width
-      });
-      return { version: version, outfile: outfile };
+    var outfile = imageObject.pathToVersion(version);
+    fs.ensureDirSync(path.dirname(outfile));
+    return runResize({
+      image: imageBuffer,
+      outfile: outfile,
+      width: width
     });
   });
 };
 
 var runResize = function runResize(config) {
-  return sharp(config.image).resize(config.width).withMetadata().toFile(config.outfile).then(function () {
-    // console.log(data)
-  }).catch(function (err) {
+  return sharp(config.image).resize(config.width).withMetadata().toFile(config.outfile)
+  // .then(() => {
+  // console.log(data)
+  // })
+  .catch(function (err) {
     console.log('resizing failed ' + err);
   });
 };

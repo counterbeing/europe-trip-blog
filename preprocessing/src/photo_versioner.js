@@ -1,14 +1,12 @@
 var Promise = require('bluebird')
-var fs = require('fs')
+var fs = require('fs-extra')
 var sharp = require('sharp')
 var path = require('path')
-var mkdirp = Promise.promisify(require('mkdirp'))
 var chalk = require('chalk')
 
 Promise.promisifyAll(fs)
-Promise.promisifyAll(sharp)
 
-let photosDir = '../public/photos'
+var config = require('../config/' + (process.env.NODE_ENV || 'development'))
 
 let imagePresets = [
   [ 'thumb', 100 ],
@@ -18,17 +16,11 @@ let imagePresets = [
 ]
 
 export default (imageObject) => {
-  return fs.readFileAsync(imageObject.path)
+  return fs.readFileAsync(imageObject.filePath)
   .then((imageBuffer) => {
-    return Promise.all(promisedSizes(imageObject, imageBuffer))
-  })
-  .then((result) => {
-    return Promise.reduce(result, (total, chunk) => {
-      let version = chunk.version
-      let outfile = chunk.outfile
-      total[version] = outfile
-      return total
-    }, {})
+    return Promise.all(
+      promisedSizes(imageObject, imageBuffer, config.photosDir)
+    )
   })
   .catch((error) => {
     console.log(chalk.red('Image resize failed.'))
@@ -40,17 +32,12 @@ var promisedSizes = (imageObject, imageBuffer) => {
   return Promise.map(imagePresets, item => {
     let version = item[0]
     let width   = item[1]
-    let outfile = path.join(
-       photosDir, imageObject.dateCreated, version, imageObject.relativePath
-    )
-    return mkdirp(path.dirname(outfile))
-    .then(() => {
-      runResize({
-        image: imageBuffer,
-        outfile: outfile,
-        width: width
-      })
-      return { version: version, outfile: outfile }
+    let outfile = imageObject.pathToVersion(version)
+    fs.ensureDirSync(path.dirname(outfile))
+    return   runResize({
+      image: imageBuffer,
+      outfile: outfile,
+      width: width
     })
   })
 }
@@ -60,9 +47,9 @@ var runResize = (config) => {
     .resize(config.width)
     .withMetadata()
     .toFile(config.outfile)
-    .then(() => {
+    // .then(() => {
       // console.log(data)
-    })
+    // })
     .catch((err) => {
       console.log('resizing failed ' + err)
     })

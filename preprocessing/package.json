@@ -6,7 +6,7 @@
   "scripts": {
     "all": "babel src --out-dir lib && node --harmony lib/index.js",
     "preprocess": "babel src --watch --out-dir lib",
-    "test": "babel src --out-dir lib > /dev/null && mocha --compilers js:babel-core/register",
+    "test": "babel src --out-dir lib > /dev/null && NODE_ENV=test mocha --compilers js:babel-core/register",
     "dtest": "babel src --out-dir lib && mocha debug --compilers js:babel-core/register"
   },
   "author": "Cory Logan",
@@ -25,7 +25,7 @@
     "moment": "^2.18.1",
     "pixelated-svg": "^1.0.1",
     "sharp": "^0.17.3",
-    "sinon": "^2.3.2",
+    "sinon": "^2.3.5",
     "to-snake-case": "^1.0.0",
     "yaml-front-matter": "^3.4.0"
   },

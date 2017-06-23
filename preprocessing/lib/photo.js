@@ -34,9 +34,15 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
+var _photo_versioner = require('./photo_versioner');
+
+var _photo_versioner2 = _interopRequireDefault(_photo_versioner);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var config = require('../config/' + (process.env.NODE_ENV || 'development'));
 
 _bluebird2.default.promisifyAll(_exiftool2.default);
 
@@ -48,16 +54,33 @@ var Photo = function () {
   }
 
   _createClass(Photo, [{
-    key: 'metaData',
-    value: function metaData() {
+    key: 'extractData',
+    value: function extractData() {
+      var _this = this;
+
       return _bluebird2.default.join(this.exifData(), phashFromFile(this.filePath), function (exif, phash) {
-        return Object.assign(exif, { phash: phash });
+        _this.metadata = Object.assign(exif, { phash: phash });
+      });
+    }
+  }, {
+    key: 'pathToVersion',
+    value: function pathToVersion(version) {
+      return _path2.default.join(config.photosDir, this.metadata.dateCreated, version, this.metadata.relativePath);
+    }
+  }, {
+    key: 'process',
+    value: function process() {
+      var photo = this;
+      return photo.extractData().then(function () {
+        return moveOriginal(photo);
+      }).then(function () {
+        return (0, _photo_versioner2.default)(photo);
       });
     }
   }, {
     key: 'exifData',
     value: function exifData() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.storedExifData) {
         return this.storedExifData;
@@ -71,7 +94,7 @@ var Photo = function () {
         var formattedDate = dateObject.format('YYYY-MM-DD');
 
         return {
-          path: _this.filePath,
+          path: _this2.filePath,
           relativePath: _path2.default.join((0, _toSnakeCase2.default)(metadata.title) + '.jpg'),
           title: metadata.title,
           imageWidth: dimensionsArr[0],
@@ -88,6 +111,13 @@ var Photo = function () {
 
   return Photo;
 }();
+
+var moveOriginal = function moveOriginal(photoObject) {
+  var newPath = photoObject.pathToVersion('original');
+  return _fsExtra2.default.move(photoObject.filePath, newPath).then(function () {
+    photoObject.filePath = newPath;
+  });
+};
 
 var formatDate = function formatDate(exifDateString) {
   return (0, _moment2.default)(exifDateString, 'YYYY:MM:DD HH:mm:SS');

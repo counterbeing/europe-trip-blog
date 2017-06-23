@@ -5,6 +5,8 @@ import imghash from 'imghash'
 import moment from 'moment'
 import Promise from 'bluebird'
 import path from 'path'
+import photoVersioner from './photo_versioner'
+var config = require('../config/' + (process.env.NODE_ENV || 'development'))
 
 Promise.promisifyAll(exif)
 
@@ -13,14 +15,34 @@ class Photo {
     this.filePath = filePath
   }
 
-  metaData() {
+  extractData() {
     return Promise.join(
       this.exifData(),
       phashFromFile(this.filePath),
       (exif, phash) => {
-        return Object.assign(exif, {phash: phash} )
+        this.metadata = Object.assign(exif, {phash: phash} )
       }
     )
+  }
+
+  pathToVersion(version) {
+    return path.join(
+      config.photosDir,
+      this.metadata.dateCreated,
+      version,
+      this.metadata.relativePath
+    )
+  }
+
+  process() {
+    let photo = this
+    return photo.extractData()
+    .then(() => {
+      return moveOriginal(photo)
+    })
+    .then(() => {
+      return photoVersioner(photo)
+    })
   }
 
   exifData() {
@@ -51,6 +73,13 @@ class Photo {
       }
     })
   }
+}
+
+var moveOriginal = (photoObject) => {
+  let newPath = photoObject.pathToVersion('original')
+  return fs.move(photoObject.filePath, newPath).then(() => {
+    photoObject.filePath = newPath
+  })
 }
 
 var formatDate = (exifDateString) => {
