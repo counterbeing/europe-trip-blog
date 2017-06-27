@@ -17,6 +17,7 @@ class Photo {
       this.filePath = arg
     } else {
       this.metadata = arg
+      this.processed = true
     }
   }
 
@@ -46,6 +47,7 @@ class Photo {
       return moveOriginal(photo)
     })
     .then(() => {
+      photo.processed = true
       return photoVersioner(photo)
     })
   }

@@ -18,6 +18,7 @@ describe('Photo', function() {
     }
     let photo = new Photo(metadata)
     assert.equal(metadata, photo.metadata)
+    assert.equal(true, photo.processed)
   })
 
   beforeEach(function () {
@@ -49,7 +50,9 @@ describe('Photo', function() {
   it('processes the photo', function() {
     this.timeout(5000)
     var photo = new Photo('test/tmp/public/photos/IMG_0150.jpg')
+    assert.equal(undefined, photo.processed)
     return photo.process().then(function() {
+      assert.equal(true, photo.processed)
       assert.equal(true, fs.pathExistsSync(
         'test/tmp/public/photos/2017-05-08/thumb/chilling-on-the-ferry.jpg'
       ))

@@ -58,6 +58,7 @@ var Photo = function () {
       this.filePath = arg;
     } else {
       this.metadata = arg;
+      this.processed = true;
     }
   }
 
@@ -82,6 +83,7 @@ var Photo = function () {
       return photo.extractData().then(function () {
         return moveOriginal(photo);
       }).then(function () {
+        photo.processed = true;
         return (0, _photo_versioner2.default)(photo);
       });
     }
