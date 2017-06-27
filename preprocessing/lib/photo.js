@@ -51,10 +51,14 @@ var config = require('../config/index');
 _bluebird2.default.promisifyAll(_exiftool2.default);
 
 var Photo = function () {
-  function Photo(filePath) {
+  function Photo(arg) {
     _classCallCheck(this, Photo);
 
-    this.filePath = filePath;
+    if (arg.title == undefined) {
+      this.filePath = arg;
+    } else {
+      this.metadata = arg;
+    }
   }
 
   _createClass(Photo, [{
@@ -84,8 +88,6 @@ var Photo = function () {
   }, {
     key: 'exifData',
     value: function exifData() {
-      var _this2 = this;
-
       if (this.storedExifData) {
         return this.storedExifData;
       }
@@ -98,7 +100,6 @@ var Photo = function () {
         var formattedDate = dateObject.format('YYYY-MM-DD');
 
         return {
-          path: _this2.filePath,
           relativePath: _path2.default.join((0, _paramCase2.default)(metadata.title) + '.jpg'),
           title: metadata.title,
           imageWidth: dimensionsArr[0],

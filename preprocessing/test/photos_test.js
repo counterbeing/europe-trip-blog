@@ -3,21 +3,22 @@ import fs from 'fs-extra'
 import Photo from '../lib/photo'
 
 describe('Photo', function() {
-  // it('loads an existing photo object without processing it', function() {
-  //   let photo = new Photo(
-  //     {
-  //       'relativePath': 'grande-grotto-right.jpg',
-  //       'title': 'Grande Grotto Right',
-  //       'imageWidth': '3264',
-  //       'imageHeight': '2448',
-  //       'latitude': '37 deg 0\' 14.36" N',
-  //       'longitude': '26 deg 56\' 35.64" E',
-  //       'createdAt': '2017-05-08T22:00:00.000Z',
-  //       'dateCreated': '2017-05-09',
-  //       'phash': '1707870707332372'
-  //     }
-  //   )
-  // })
+  it('loads an existing photo object without processing it', function() {
+    let metadata = {
+      'relativePath': 'monastary-hike-out.jpg',
+      'title': 'Monastary hike out',
+      'imageWidth': '2448',
+      'imageHeight': '3264',
+      'caption': 'On our way back from Monastary for some cragging, we witnissed our first Kalymnos sunset.',
+      'latitude': 36.96542222,
+      'longitude': 26.92809722,
+      'createdAt': '2017-05-07T22:00:00.000Z',
+      'dateCreated': '2017-05-08',
+      'phash': '5f08e701e701e8e0'
+    }
+    let photo = new Photo(metadata)
+    assert.equal(metadata, photo.metadata)
+  })
 
   beforeEach(function () {
     fs.removeSync('test/tmp')

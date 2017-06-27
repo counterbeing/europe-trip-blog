@@ -12,8 +12,12 @@ var config = require('../config/index')
 Promise.promisifyAll(exif)
 
 class Photo {
-  constructor(filePath) {
-    this.filePath = filePath
+  constructor(arg) {
+    if(arg.title == undefined) {
+      this.filePath = arg
+    } else {
+      this.metadata = arg
+    }
   }
 
   extractData() {
@@ -61,7 +65,6 @@ class Photo {
       let formattedDate = dateObject.format('YYYY-MM-DD')
 
       return {
-        path: this.filePath,
         relativePath: path.join(paramCase(metadata.title) + '.jpg'),
         title: metadata.title,
         imageWidth: dimensionsArr[0],
