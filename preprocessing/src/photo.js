@@ -77,6 +77,7 @@ class Photo {
 
 var moveOriginal = (photoObject) => {
   let newPath = photoObject.pathToVersion('original')
+  // console.log('moving to ' + newPath)
   return fs.move(photoObject.filePath, newPath).then(() => {
     photoObject.filePath = newPath
   })

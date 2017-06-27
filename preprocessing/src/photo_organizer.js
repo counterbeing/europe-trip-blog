@@ -5,6 +5,7 @@ import fs from 'fs-extra'
 var config = require('../config/index')
 
 export default () => {
+  loadPhotosIndex()
   processNewPhotos()
 }
 
@@ -14,17 +15,20 @@ var processNewPhotos = () => {
     return fileName.match(/\.(jpg|jpeg|JPG|JPEG)$/)
   })
   .map((fileName) => {
-    return new Photo(fileName)
+    // console.log(fileName)
+    return new Photo(config.photosDir + '/' + fileName)
   })
   .map((photo) => {
-    photo.process()
-    console.log(photo.metadata)
-    return photo.metadata
+    return photo.process().then(() => {
+      // console.log(photo.metadata)
+      return photo.metadata
+    })
   })
   .then((metadata) => {
-    // console.log(metadata)
     photoQueries.run(metadata)
   })
 }
 
-exports.default()
+var loadPhotosIndex = () => {
+  // gotta return a promise
+}

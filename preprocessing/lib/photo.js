@@ -114,6 +114,7 @@ var Photo = function () {
 
 var moveOriginal = function moveOriginal(photoObject) {
   var newPath = photoObject.pathToVersion('original');
+  // console.log('moving to ' + newPath)
   return _fsExtra2.default.move(photoObject.filePath, newPath).then(function () {
     photoObject.filePath = newPath;
   });

@@ -8,12 +8,16 @@ var _fsExtra = require('fs-extra');
 
 var _fsExtra2 = _interopRequireDefault(_fsExtra);
 
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Promise = require('bluebird'); // Accepts metadata in the form of a massive array of objects
+// Accepts metadata in the form of a massive array of objects
 // and then spits out pre filtered json files for any needed
 // API endpoint for photos.
-
+var Promise = require('bluebird');
 var config = require('../config/index');
 
 exports.default = {
@@ -32,7 +36,8 @@ exports.default = {
 
 
 var _masterIndex = function _masterIndex(metadata) {
-  return _fsExtra2.default.writeJson(config.photosDir, metadata, { spaces: 2 });
+  var file = _path2.default.join(config.photosDir, '/index.json');
+  return _fsExtra2.default.writeJson(file, metadata, { spaces: 2 });
 };
 
 var _dateIndex = function _dateIndex(metadata) {
@@ -43,7 +48,7 @@ var _dateIndex = function _dateIndex(metadata) {
     return Promise.filter(metadata, function (imageObject) {
       return imageObject.dateCreated == date;
     }).then(function (metadata) {
-      var file = config.photosDir + date + '/index.json';
+      var file = _path2.default.join(config.photosDir, date, '/index.json');
       return _fsExtra2.default.writeJson(file, metadata, { spaces: 2 });
     });
   });

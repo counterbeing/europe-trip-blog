@@ -3,6 +3,12 @@ import fs from 'fs-extra'
 import Photo from '../lib/photo'
 
 describe('Photo', function() {
+  // it('loads an existing photo object without processing it', function() {
+  //   let photo = new Photo(
+  //     {}
+  //   )
+  // })
+
   beforeEach(function () {
     fs.removeSync('test/tmp')
     fs.copySync(

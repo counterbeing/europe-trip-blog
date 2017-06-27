@@ -2,6 +2,7 @@
 // and then spits out pre filtered json files for any needed
 // API endpoint for photos.
 import fs from 'fs-extra'
+import path from 'path'
 var Promise = require('bluebird')
 var config = require('../config/index')
 
@@ -25,7 +26,8 @@ export default {
 }
 
 var masterIndex = (metadata) => {
-  return fs.writeJson(config.photosDir, metadata, {spaces: 2})
+  let file = path.join(config.photosDir, '/index.json')
+  return fs.writeJson(file, metadata, {spaces: 2})
 }
 
 var dateIndex = (metadata) => {
@@ -38,7 +40,7 @@ var dateIndex = (metadata) => {
       return imageObject.dateCreated == date
     })
     .then((metadata) => {
-      let file = config.photosDir + date + '/index.json'
+      let file = path.join(config.photosDir, date, '/index.json')
       return fs.writeJson(file, metadata, {spaces: 2})
     })
   })

@@ -21,6 +21,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var config = require('../config/index');
 
 exports.default = function () {
+  loadPhotosIndex();
   processNewPhotos();
 };
 
@@ -28,15 +29,18 @@ var processNewPhotos = function processNewPhotos() {
   _fsExtra2.default.readdirAsync(config.photosDir).filter(function (fileName) {
     return fileName.match(/\.(jpg|jpeg|JPG|JPEG)$/);
   }).map(function (fileName) {
-    return new _photo2.default(fileName);
+    // console.log(fileName)
+    return new _photo2.default(config.photosDir + '/' + fileName);
   }).map(function (photo) {
-    photo.process();
-    console.log(photo.metadata);
-    return photo.metadata;
+    return photo.process().then(function () {
+      // console.log(photo.metadata)
+      return photo.metadata;
+    });
   }).then(function (metadata) {
-    // console.log(metadata)
     _photo_queries2.default.run(metadata);
   });
 };
 
-exports.default();
+var loadPhotosIndex = function loadPhotosIndex() {
+  // gotta return a promise
+};

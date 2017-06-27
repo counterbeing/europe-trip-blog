@@ -1,3 +1,8 @@
+## Next Steps
+- Write out master index
+- Read photos from master index
+- Write new, or replace with newly provided photos
+
 ## Overview of Photo Processing
 
 - Calculate the phash of the image to determine if it exists already or, if it needs to be processed.
