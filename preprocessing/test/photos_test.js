@@ -5,7 +5,17 @@ import Photo from '../lib/photo'
 describe('Photo', function() {
   // it('loads an existing photo object without processing it', function() {
   //   let photo = new Photo(
-  //     {}
+  //     {
+  //       'relativePath': 'grande-grotto-right.jpg',
+  //       'title': 'Grande Grotto Right',
+  //       'imageWidth': '3264',
+  //       'imageHeight': '2448',
+  //       'latitude': '37 deg 0\' 14.36" N',
+  //       'longitude': '26 deg 56\' 35.64" E',
+  //       'createdAt': '2017-05-08T22:00:00.000Z',
+  //       'dateCreated': '2017-05-09',
+  //       'phash': '1707870707332372'
+  //     }
   //   )
   // })
 
