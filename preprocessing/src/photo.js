@@ -5,6 +5,7 @@ import imghash from 'imghash'
 import moment from 'moment'
 import Promise from 'bluebird'
 import path from 'path'
+import geolib from 'geolib'
 import photoVersioner from './photo_versioner'
 var config = require('../config/index')
 
@@ -66,13 +67,18 @@ class Photo {
         imageWidth: dimensionsArr[0],
         imageHeight: dimensionsArr[1],
         caption: metadata.imageDescription,
-        latitude: metadata.gpsLatitude,
-        longitude: metadata.gpsLongitude,
+        latitude: convertGPS(metadata.gpsLatitude),
+        longitude: convertGPS(metadata.gpsLongitude),
         createdAt: dateObject,
         dateCreated: formattedDate
       }
     })
   }
+}
+
+var convertGPS = (coordinate) => {
+  let sex = coordinate.replace(' deg', '°')
+  return geolib.sexagesimal2decimal(sex)
 }
 
 var moveOriginal = (photoObject) => {

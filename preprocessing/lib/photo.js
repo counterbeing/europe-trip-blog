@@ -34,6 +34,10 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
+var _geolib = require('geolib');
+
+var _geolib2 = _interopRequireDefault(_geolib);
+
 var _photo_versioner = require('./photo_versioner');
 
 var _photo_versioner2 = _interopRequireDefault(_photo_versioner);
@@ -100,8 +104,8 @@ var Photo = function () {
           imageWidth: dimensionsArr[0],
           imageHeight: dimensionsArr[1],
           caption: metadata.imageDescription,
-          latitude: metadata.gpsLatitude,
-          longitude: metadata.gpsLongitude,
+          latitude: convertGPS(metadata.gpsLatitude),
+          longitude: convertGPS(metadata.gpsLongitude),
           createdAt: dateObject,
           dateCreated: formattedDate
         };
@@ -111,6 +115,11 @@ var Photo = function () {
 
   return Photo;
 }();
+
+var convertGPS = function convertGPS(coordinate) {
+  var sex = coordinate.replace(' deg', '°');
+  return _geolib2.default.sexagesimal2decimal(sex);
+};
 
 var moveOriginal = function moveOriginal(photoObject) {
   var newPath = photoObject.pathToVersion('original');

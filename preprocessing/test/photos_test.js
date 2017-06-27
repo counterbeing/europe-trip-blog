@@ -39,7 +39,7 @@ describe('Photo', function() {
     var photo = new Photo('test/tmp/public/photos/IMG_0150.jpg')
     return photo.exifData().then(function(result) {
       assert.equal(result.title, 'Chilling on the Ferry')
-      assert.equal(result.latitude, '36 deg 57\' 29.94" N')
+      assert.equal(result.latitude, '36.95831667')
       assert.equal(result.imageWidth, '1900')
       assert.equal(result.relativePath, 'chilling-on-the-ferry.jpg')
     })
