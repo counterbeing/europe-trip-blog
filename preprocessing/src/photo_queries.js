@@ -1,10 +1,9 @@
 // Accepts metadata in the form of a massive array of objects
 // and then spits out pre filtered json files for any needed
 // API endpoint for photos.
-var fs = require('fs')
+import fs from 'fs-extra'
 var Promise = require('bluebird')
-Promise.promisifyAll(fs)
-import jsonWriter from './json_writer'
+var config = require('../config/index')
 
 export default {
   run: (metadata) => {
@@ -26,7 +25,7 @@ export default {
 }
 
 var masterIndex = (metadata) => {
-  return jsonWriter.run('../public/photos/index.json', metadata)
+  return fs.writeJson(config.photosDir, metadata, {spaces: 2})
 }
 
 var dateIndex = (metadata) => {
@@ -39,8 +38,8 @@ var dateIndex = (metadata) => {
       return imageObject.dateCreated == date
     })
     .then((metadata) => {
-      let dir = '../public/photos/' + date
-      return jsonWriter.run(dir + '/index.json', metadata)
+      let file = config.photosDir + date + '/index.json'
+      return fs.writeJson(file, metadata, {spaces: 2})
     })
   })
 }

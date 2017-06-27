@@ -18,23 +18,18 @@ var _fsExtra2 = _interopRequireDefault(_fsExtra);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import path from 'path'
-
-var config = require('../config/' + (process.env.NODE_ENV || 'development')); // import photoVersioner from './photo_versioner'
+var config = require('../config/index');
 
 exports.default = function () {
+  processNewPhotos();
+};
+
+var processNewPhotos = function processNewPhotos() {
   _fsExtra2.default.readdirAsync(config.photosDir).filter(function (fileName) {
     return fileName.match(/\.(jpg|jpeg|JPG|JPEG)$/);
   }).map(function (fileName) {
     return new _photo2.default(fileName);
-  })
-  // .catch((err) => {
-  //   console.log('fuck' + err)
-  // })
-  // .map((photo) => {
-  //   return moveOriginal(photo)
-  // })
-  .map(function (photo) {
+  }).map(function (photo) {
     photo.process();
     console.log(photo.metadata);
     return photo.metadata;

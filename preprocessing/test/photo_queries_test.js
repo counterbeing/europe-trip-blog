@@ -1,7 +1,7 @@
 import assert from 'assert'
 import sinon from 'sinon'
-import jsonWriter from '../lib/json_writer'
 import photoQueries from '../lib/photo_queries'
+import fs from 'fs-extra'
 
 var metadata = [
   {
@@ -47,8 +47,8 @@ describe('running queries for json index generation', function() {
   var expectation
   beforeEach(function () {
     var promise = new Promise(function(resolve) { return resolve('yay') })
-    mock = sinon.mock(jsonWriter)
-    expectation = mock.expects('run')
+    mock = sinon.mock(fs)
+    expectation = mock.expects('writeJson')
     expectation.returns(promise)
   })
   afterEach(function(){
