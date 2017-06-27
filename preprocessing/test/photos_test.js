@@ -25,7 +25,7 @@ describe('Photo', function() {
       assert.equal(result.title, 'Chilling on the Ferry')
       assert.equal(result.latitude, '36 deg 57\' 29.94" N')
       assert.equal(result.imageWidth, '1900')
-      assert.equal(result.relativePath, 'chilling_on_the_ferry.jpg')
+      assert.equal(result.relativePath, 'chilling-on-the-ferry.jpg')
     })
   })
 
@@ -34,7 +34,7 @@ describe('Photo', function() {
     var photo = new Photo('test/tmp/public/photos/IMG_0150.jpg')
     return photo.process().then(function() {
       assert.equal(true, fs.pathExistsSync(
-        'test/tmp/public/photos/2017-05-08/thumb/chilling_on_the_ferry.jpg'
+        'test/tmp/public/photos/2017-05-08/thumb/chilling-on-the-ferry.jpg'
       ))
     })
   })

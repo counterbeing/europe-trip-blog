@@ -14,9 +14,9 @@ var _exiftool = require('exiftool');
 
 var _exiftool2 = _interopRequireDefault(_exiftool);
 
-var _toSnakeCase = require('to-snake-case');
+var _paramCase = require('param-case');
 
-var _toSnakeCase2 = _interopRequireDefault(_toSnakeCase);
+var _paramCase2 = _interopRequireDefault(_paramCase);
 
 var _imghash = require('imghash');
 
@@ -95,7 +95,7 @@ var Photo = function () {
 
         return {
           path: _this2.filePath,
-          relativePath: _path2.default.join((0, _toSnakeCase2.default)(metadata.title) + '.jpg'),
+          relativePath: _path2.default.join((0, _paramCase2.default)(metadata.title) + '.jpg'),
           title: metadata.title,
           imageWidth: dimensionsArr[0],
           imageHeight: dimensionsArr[1],

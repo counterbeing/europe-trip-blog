@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import exif from 'exiftool'
-import snake from 'to-snake-case'
+import paramCase from 'param-case'
 import imghash from 'imghash'
 import moment from 'moment'
 import Promise from 'bluebird'
@@ -61,7 +61,7 @@ class Photo {
 
       return {
         path: this.filePath,
-        relativePath: path.join(snake(metadata.title) + '.jpg'),
+        relativePath: path.join(paramCase(metadata.title) + '.jpg'),
         title: metadata.title,
         imageWidth: dimensionsArr[0],
         imageHeight: dimensionsArr[1],
