@@ -42,7 +42,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var config = require('../config/' + (process.env.NODE_ENV || 'development'));
+var config = require('../config/index');
 
 _bluebird2.default.promisifyAll(_exiftool2.default);
 

@@ -6,7 +6,7 @@ import moment from 'moment'
 import Promise from 'bluebird'
 import path from 'path'
 import photoVersioner from './photo_versioner'
-var config = require('../config/' + (process.env.NODE_ENV || 'development'))
+var config = require('../config/index')
 
 Promise.promisifyAll(exif)
 

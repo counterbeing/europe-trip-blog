@@ -2,7 +2,7 @@
 import photoQueries from './photo_queries'
 import Photo from './photo'
 import fs from 'fs-extra'
-import path from 'path'
+// import path from 'path'
 
 var config = require('../config/' + (process.env.NODE_ENV || 'development'))
 
@@ -14,34 +14,21 @@ export default () => {
   .map((fileName) => {
     return new Photo(fileName)
   })
-  .map((photo) => {
-    return moveOriginal(photo)
-  })
+  // .catch((err) => {
+  //   console.log('fuck' + err)
+  // })
+  // .map((photo) => {
+  //   return moveOriginal(photo)
+  // })
   .map((photo) => {
     photo.process()
+    console.log(photo.metadata)
     return photo.metadata
   })
   .then((metadata) => {
+    // console.log(metadata)
     photoQueries.run(metadata)
   })
-}
-
-var moveOriginal = (photoObject) => {
-  let newPath = path.join(
-    config.photosDir,
-    photoObject.dateCreated,
-    'original',
-    photoObject.relativePath
-  )
-
-  return fs.mkdirp(path.dirname(newPath))
-    .then(() => {
-      fs.rename(photoObject.path, newPath)
-    })
-    .then(() => {
-      photoObject.path = newPath
-      return photoObject
-    })
 }
 
 exports.default()

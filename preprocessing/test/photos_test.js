@@ -1,7 +1,6 @@
 import assert from 'assert'
 import fs from 'fs-extra'
 import Photo from '../lib/photo'
-// import sinon from 'sinon'
 
 describe('Photo', function() {
   beforeEach(function () {
