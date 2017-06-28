@@ -53,6 +53,21 @@ class Photo {
     })
   }
 
+  formatForExport() {
+    return {
+      type: 'photo',
+      id: this.metadata.uuid,
+      attributes: {
+        filename: this.metadata.relativePath,
+        title: this.metadata.title,
+        caption: this.metadata.caption,
+        latitude: this.metadata.longitude,
+        longitude: this.metadata.longitude,
+        dateCreated: this.metadata.createdAt,
+      }
+    }
+  }
+
   exifData() {
     if(this.storedExifData) {
       return this.storedExifData

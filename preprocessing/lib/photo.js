@@ -92,6 +92,22 @@ var Photo = function () {
       });
     }
   }, {
+    key: 'formatForExport',
+    value: function formatForExport() {
+      return {
+        type: 'photo',
+        id: this.metadata.uuid,
+        attributes: {
+          filename: this.metadata.relativePath,
+          title: this.metadata.title,
+          caption: this.metadata.caption,
+          latitude: this.metadata.longitude,
+          longitude: this.metadata.longitude,
+          dateCreated: this.metadata.createdAt
+        }
+      };
+    }
+  }, {
     key: 'exifData',
     value: function exifData() {
       if (this.storedExifData) {

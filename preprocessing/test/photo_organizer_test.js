@@ -12,7 +12,7 @@ describe('photoOrganizer', function() {
       )
     })
 
-    it.only('versions and creates index', function() {
+    it('versions and creates index', function() {
       let result = fs.pathExistsSync('test/tmp/index.json')
       assert.equal(result, false)
       return photoOrganizer().then(function() {

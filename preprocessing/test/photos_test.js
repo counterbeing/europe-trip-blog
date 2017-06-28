@@ -1,11 +1,13 @@
 import assert from 'assert'
 import fs from 'fs-extra'
 import Photo from '../lib/photo'
+import expect from 'expect'
 
 describe('Photo', function() {
-  it('loads an existing photo object without processing it', function() {
+  describe('constructor', function() {
     let metadata = {
       'relativePath': 'monastary-hike-out.jpg',
+      'uuid': 'b5b0c893-6c05-4977-b1e2-f51983cd422a',
       'title': 'Monastary hike out',
       'imageWidth': '2448',
       'imageHeight': '3264',
@@ -16,9 +18,30 @@ describe('Photo', function() {
       'dateCreated': '2017-05-08',
       'phash': '5f08e701e701e8e0'
     }
-    let photo = new Photo(metadata)
-    assert.equal(metadata, photo.metadata)
-    assert.equal(true, photo.processed)
+
+    it('loads an existing photo object without processing it', function() {
+      let photo = new Photo(metadata)
+      expect(photo.metadata).toEqual(metadata)
+      expect(photo.processed).toEqual(true)
+    })
+
+    it('formats for export', function() {
+      let photo = new Photo(metadata)
+      let expected = {
+        type: 'photo',
+        id: 'b5b0c893-6c05-4977-b1e2-f51983cd422a',
+        attributes:
+        { filename: 'monastary-hike-out.jpg',
+          title: 'Monastary hike out',
+          caption: 'On our way back from Monastary for some cragging, we witnissed our first Kalymnos sunset.',
+          latitude: 26.92809722,
+          longitude: 26.92809722,
+          dateCreated: '2017-05-07T22:00:00.000Z'
+        }
+      }
+      let actual = photo.formatForExport()
+      expect(actual).toEqual(expected)
+    })
   })
 
   beforeEach(function () {
