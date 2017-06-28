@@ -3,6 +3,7 @@
 // API endpoint for photos.
 import fs from 'fs-extra'
 import path from 'path'
+import Photo from './photo'
 var Promise = require('bluebird')
 var config = require('../config/index')
 
@@ -11,6 +12,7 @@ export default {
     return Promise.all(
       [
         masterIndex(metadata),
+        index(metadata),
         dateIndex(metadata)
       ]
     )
@@ -22,12 +24,33 @@ export default {
 
   dateIndex: (metadata) => {
     return dateIndex(metadata)
+  },
+
+  index: (metadata) => {
+    return index(metadata)
   }
 }
 
+var writeJson = (file, data) => {
+  return fs.writeJson(
+    file,
+    {data: data},
+    {spaces: 2}
+  )
+}
+
 var masterIndex = (metadata) => {
-  let file = path.join(config.photosDir, '/index.json')
+  let file = path.join(config.photosDir, '/masterIndex.json')
   return fs.writeJson(file, metadata, {spaces: 2})
+}
+
+var index = (metadata) => {
+  let file = path.join(config.photosDir, '/index.json')
+  let photos = metadata.map((data) => {
+    let photo = new Photo(data)
+    return photo.formatForExport()
+  })
+  return writeJson(file, photos)
 }
 
 var dateIndex = (metadata) => {
@@ -41,7 +64,8 @@ var dateIndex = (metadata) => {
     })
     .then((metadata) => {
       let file = path.join(config.photosDir, date, '/index.json')
-      return fs.writeJson(file, metadata, {spaces: 2})
+      // return fs.writeJson(file, metadata, {spaces: 2})
+      return writeJson(file, metadata)
     })
   })
 }
