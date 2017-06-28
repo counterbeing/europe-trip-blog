@@ -1,34 +1,38 @@
 import photoQueries from './photo_queries'
 import Photo from './photo'
 import fs from 'fs-extra'
+import path from 'path'
 
 var config = require('../config/index')
 
 export default () => {
-  loadPhotosIndex()
-  processNewPhotos()
+  return loadPhotosIndex().then((existingPhotos) => {
+    return processNewPhotos(existingPhotos)
+  })
 }
 
-var processNewPhotos = () => {
-  fs.readdirAsync(config.photosDir)
+var processNewPhotos = (existingPhotos) => {
+  return fs.readdirAsync(config.photosDir)
   .filter((fileName) => {
     return fileName.match(/\.(jpg|jpeg|JPG|JPEG)$/)
   })
   .map((fileName) => {
-    // console.log(fileName)
-    return new Photo(config.photosDir + '/' + fileName)
+    let file = path.join(config.photosDir + '/' + fileName)
+    return new Photo(file)
   })
   .map((photo) => {
     return photo.process().then(() => {
-      // console.log(photo.metadata)
       return photo.metadata
     })
   })
   .then((metadata) => {
-    photoQueries.run(metadata)
+    return [...metadata, ...existingPhotos]
+  })
+  .then((allMetadata) => {
+    return photoQueries.run(allMetadata)
   })
 }
 
 var loadPhotosIndex = () => {
-  // gotta return a promise
+  return fs.readJson(path.join(config.photosDir, 'index.json'))
 }
