@@ -1,4 +1,4 @@
 module.exports = {
-  photosDir: 'test/tmp/public/photos',
+  photosDir: 'test/tmp',
   additional: 100
 }

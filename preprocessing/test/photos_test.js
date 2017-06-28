@@ -24,13 +24,13 @@ describe('Photo', function() {
   beforeEach(function () {
     fs.removeSync('test/tmp')
     fs.copySync(
-      'test/fixtures/public',
-      'test/tmp/public'
+      'test/fixtures/single_new_photo/',
+      'test/tmp'
     )
   })
 
   it('combines into master metadata all other objects', function() {
-    var photo = new Photo('test/tmp/public/photos/IMG_0150.jpg')
+    var photo = new Photo('test/tmp/IMG_0150.jpg')
     return photo.extractData().then(function() {
       assert.equal(photo.metadata.phash, 'f8c0c525a383c1f0')
       assert.equal(photo.metadata.title, 'Chilling on the Ferry')
@@ -38,7 +38,7 @@ describe('Photo', function() {
   })
 
   it('gathers exif data', function() {
-    var photo = new Photo('test/tmp/public/photos/IMG_0150.jpg')
+    var photo = new Photo('test/tmp/IMG_0150.jpg')
     return photo.exifData().then(function(result) {
       assert.equal(result.title, 'Chilling on the Ferry')
       assert.equal(result.latitude, '36.95831667')
@@ -49,12 +49,12 @@ describe('Photo', function() {
 
   it('processes the photo', function() {
     this.timeout(5000)
-    var photo = new Photo('test/tmp/public/photos/IMG_0150.jpg')
+    var photo = new Photo('test/tmp/IMG_0150.jpg')
     assert.equal(undefined, photo.processed)
     return photo.process().then(function() {
       assert.equal(true, photo.processed)
       assert.equal(true, fs.pathExistsSync(
-        'test/tmp/public/photos/2017-05-08/thumb/chilling-on-the-ferry.jpg'
+        'test/tmp/2017-05-08/thumb/chilling-on-the-ferry.jpg'
       ))
     })
   })
