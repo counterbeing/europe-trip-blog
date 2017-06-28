@@ -49,5 +49,8 @@
     "paths": [
       "lib/story-parser"
     ]
+  },
+  "dependencies": {
+    "aws-sdk": "^2.78.0"
   }
 }

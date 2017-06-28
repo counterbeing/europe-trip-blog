@@ -8,6 +8,10 @@ var _photo_organizer = require('./photo_organizer');
 
 var _photo_organizer2 = _interopRequireDefault(_photo_organizer);
 
+var _uploader = require('./uploader');
+
+var _uploader2 = _interopRequireDefault(_uploader);
+
 var _chalk = require('chalk');
 
 var _chalk2 = _interopRequireDefault(_chalk);
@@ -21,3 +25,6 @@ storyProcessor.run();
 
 console.log(_chalk2.default.green('Processing photos...'));
 (0, _photo_organizer2.default)();
+
+console.log(_chalk2.default.green('Uploading photos...'));
+(0, _uploader2.default)();

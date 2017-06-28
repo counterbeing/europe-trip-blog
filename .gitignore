@@ -19,3 +19,4 @@ testem.log
 
 *_git_ignore
 preprocessing/test/tmp*
+.secrets
