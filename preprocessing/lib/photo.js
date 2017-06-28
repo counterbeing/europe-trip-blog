@@ -38,6 +38,10 @@ var _geolib = require('geolib');
 
 var _geolib2 = _interopRequireDefault(_geolib);
 
+var _v = require('uuid/v4');
+
+var _v2 = _interopRequireDefault(_v);
+
 var _photo_versioner = require('./photo_versioner');
 
 var _photo_versioner2 = _interopRequireDefault(_photo_versioner);
@@ -98,11 +102,12 @@ var Photo = function () {
         return _exiftool2.default.metadataAsync(data);
       }).then(function (metadata) {
         var dimensionsArr = splitImageSize(metadata.imageSize);
-        var dateObject = formatDate(metadata.dateCreated);
+        var dateObject = formatDate(metadata.dateCreated || metadata.createDate);
         var formattedDate = dateObject.format('YYYY-MM-DD');
 
         return {
           relativePath: _path2.default.join((0, _paramCase2.default)(metadata.title) + '.jpg'),
+          uuid: (0, _v2.default)(),
           title: metadata.title,
           imageWidth: dimensionsArr[0],
           imageHeight: dimensionsArr[1],
@@ -126,7 +131,6 @@ var convertGPS = function convertGPS(coordinate) {
 
 var moveOriginal = function moveOriginal(photoObject) {
   var newPath = photoObject.pathToVersion('original');
-  // console.log('moving to ' + newPath)
   return _fsExtra2.default.move(photoObject.filePath, newPath).then(function () {
     photoObject.filePath = newPath;
   });

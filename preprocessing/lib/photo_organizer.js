@@ -50,5 +50,7 @@ var processNewPhotos = function processNewPhotos(existingPhotos) {
 };
 
 var loadPhotosIndex = function loadPhotosIndex() {
-  return _fsExtra2.default.readJson(_path2.default.join(config.photosDir, 'index.json'));
+  var masterIndexFile = _path2.default.join(config.photosDir, 'index.json');
+  var exists = _fsExtra2.default.pathExistsSync(masterIndexFile);
+  return exists ? _fsExtra2.default.readJson(masterIndexFile) : Promise.all([]);
 };

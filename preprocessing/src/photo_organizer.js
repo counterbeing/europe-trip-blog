@@ -34,5 +34,7 @@ var processNewPhotos = (existingPhotos) => {
 }
 
 var loadPhotosIndex = () => {
-  return fs.readJson(path.join(config.photosDir, 'index.json'))
+  let masterIndexFile = path.join(config.photosDir, 'index.json')
+  let exists = fs.pathExistsSync(masterIndexFile)
+  return exists ? fs.readJson(masterIndexFile) : Promise.all([])
 }

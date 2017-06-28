@@ -6,6 +6,7 @@ import moment from 'moment'
 import Promise from 'bluebird'
 import path from 'path'
 import geolib from 'geolib'
+import uuid from 'uuid/v4'
 import photoVersioner from './photo_versioner'
 var config = require('../config/index')
 
@@ -63,11 +64,12 @@ class Photo {
     })
     .then((metadata) => {
       let dimensionsArr = splitImageSize(metadata.imageSize)
-      let dateObject = formatDate(metadata.dateCreated)
+      let dateObject = formatDate(metadata.dateCreated || metadata.createDate)
       let formattedDate = dateObject.format('YYYY-MM-DD')
 
       return {
         relativePath: path.join(paramCase(metadata.title) + '.jpg'),
+        uuid: uuid(),
         title: metadata.title,
         imageWidth: dimensionsArr[0],
         imageHeight: dimensionsArr[1],
@@ -88,7 +90,6 @@ var convertGPS = (coordinate) => {
 
 var moveOriginal = (photoObject) => {
   let newPath = photoObject.pathToVersion('original')
-  // console.log('moving to ' + newPath)
   return fs.move(photoObject.filePath, newPath).then(() => {
     photoObject.filePath = newPath
   })
