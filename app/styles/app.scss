@@ -121,3 +121,28 @@ a {
     }
   }
 }
+
+.photo-grid {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 0;
+  padding: .5vw;
+
+  .photo-display {
+    flex: auto;
+    margin: .5vw;
+    width: 300px;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .photo-grid {
+    padding: 0;
+    div { margin: 0; }
+  }
+}
