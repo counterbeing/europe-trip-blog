@@ -64,7 +64,6 @@ var dateIndex = (metadata) => {
     })
     .then((metadata) => {
       let file = path.join(config.photosDir, date, '/index.json')
-      // return fs.writeJson(file, metadata, {spaces: 2})
       return writeJson(file, metadata)
     })
   })

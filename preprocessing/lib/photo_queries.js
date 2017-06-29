@@ -70,7 +70,6 @@ var _dateIndex = function _dateIndex(metadata) {
       return imageObject.dateCreated == date;
     }).then(function (metadata) {
       var file = _path2.default.join(config.photosDir, date, '/index.json');
-      // return fs.writeJson(file, metadata, {spaces: 2})
       return writeJson(file, metadata);
     });
   });

@@ -24,7 +24,7 @@ var processNewPhotos = (existingPhotos) => {
     return photo.process().then(() => {
       return photo.metadata
     })
-  })
+  }, {concurrency: 5})
   .then((metadata) => {
     return [...metadata, ...existingPhotos]
   })

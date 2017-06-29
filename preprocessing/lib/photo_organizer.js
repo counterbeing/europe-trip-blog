@@ -42,7 +42,7 @@ var processNewPhotos = function processNewPhotos(existingPhotos) {
     return photo.process().then(function () {
       return photo.metadata;
     });
-  }).then(function (metadata) {
+  }, { concurrency: 5 }).then(function (metadata) {
     return [].concat(_toConsumableArray(metadata), _toConsumableArray(existingPhotos));
   }).then(function (allMetadata) {
     return _photo_queries2.default.run(allMetadata);

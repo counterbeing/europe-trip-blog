@@ -14,7 +14,7 @@ Promise.promisifyAll(exif)
 
 class Photo {
   constructor(arg) {
-    if(arg.title == undefined) {
+    if(!arg.title) {
       this.filePath = arg
     } else {
       this.metadata = arg
@@ -54,6 +54,9 @@ class Photo {
   }
 
   formatForExport() {
+    if(!this.metadata){
+      console.log(this)
+    }
     return {
       type: 'photo',
       id: this.metadata.uuid,
@@ -83,6 +86,7 @@ class Photo {
       let dateObject = formatDate(metadata.dateCreated || metadata.createDate)
       let formattedDate = dateObject.format('YYYY-MM-DD')
 
+      console.log('processing: ' + metadata.title)
       return {
         relativePath: path.join(paramCase(metadata.title) + '.jpg'),
         uuid: uuid(),
@@ -100,6 +104,7 @@ class Photo {
 }
 
 var convertGPS = (coordinate) => {
+  if(!coordinate) { return null }
   let sex = coordinate.replace(' deg', '°')
   return geolib.sexagesimal2decimal(sex)
 }

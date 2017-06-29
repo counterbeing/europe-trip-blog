@@ -58,7 +58,7 @@ var Photo = function () {
   function Photo(arg) {
     _classCallCheck(this, Photo);
 
-    if (arg.title == undefined) {
+    if (!arg.title) {
       this.filePath = arg;
     } else {
       this.metadata = arg;
@@ -94,6 +94,9 @@ var Photo = function () {
   }, {
     key: 'formatForExport',
     value: function formatForExport() {
+      if (!this.metadata) {
+        console.log(this);
+      }
       return {
         type: 'photo',
         id: this.metadata.uuid,
@@ -122,6 +125,7 @@ var Photo = function () {
         var dateObject = formatDate(metadata.dateCreated || metadata.createDate);
         var formattedDate = dateObject.format('YYYY-MM-DD');
 
+        console.log('processing: ' + metadata.title);
         return {
           relativePath: _path2.default.join((0, _paramCase2.default)(metadata.title) + '.jpg'),
           uuid: (0, _v2.default)(),
@@ -142,6 +146,9 @@ var Photo = function () {
 }();
 
 var convertGPS = function convertGPS(coordinate) {
+  if (!coordinate) {
+    return null;
+  }
   var sex = coordinate.replace(' deg', '°');
   return _geolib2.default.sexagesimal2decimal(sex);
 };
