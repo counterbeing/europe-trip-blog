@@ -15,7 +15,7 @@ describe('Photo', function() {
       'latitude': 36.96542222,
       'longitude': 26.92809722,
       'createdAt': '2017-05-07T22:00:00.000Z',
-      'dateCreated': '2017-05-08',
+      'dateCreated': '2017-05-07',
       'phash': '5f08e701e701e8e0'
     }
 
@@ -36,7 +36,8 @@ describe('Photo', function() {
           caption: 'On our way back from Monastary for some cragging, we witnissed our first Kalymnos sunset.',
           latitude: 26.92809722,
           longitude: 26.92809722,
-          dateCreated: '2017-05-07T22:00:00.000Z'
+          'created-at': '2017-05-07T22:00:00.000Z',
+          'date-created': '2017-05-07',
         }
       }
       let actual = photo.formatForExport()

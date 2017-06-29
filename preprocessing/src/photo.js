@@ -63,7 +63,8 @@ class Photo {
         caption: this.metadata.caption,
         latitude: this.metadata.longitude,
         longitude: this.metadata.longitude,
-        dateCreated: this.metadata.createdAt,
+        'created-at': this.metadata.createdAt,
+        'date-created': this.metadata.dateCreated,
       }
     }
   }
