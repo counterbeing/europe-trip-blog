@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "all": "babel src --out-dir lib  > /dev/null && node --harmony lib/index.js",
+    "upload": "babel src --out-dir lib  > /dev/null && node --harmony lib/upload.js",
     "preprocess": "babel src --watch --out-dir lib",
     "test": "babel src --out-dir lib > /dev/null && NODE_ENV=test mocha --compilers js:babel-core/register",
     "dtest": "babel src --out-dir lib && mocha debug --compilers js:babel-core/register"
