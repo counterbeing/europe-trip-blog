@@ -4,4 +4,10 @@ export default Ember.Route.extend({
   model() {
     return this.get('store').findAll('photo')
   },
+  inspectorVisible: false,
+  actions: {
+    inspect() {
+      this.toggleProperty('inspectorVisible')
+    }
+  }
 })

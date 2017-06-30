@@ -125,18 +125,20 @@ a {
 .photo-grid {
   display: flex;
   flex-flow: row wrap;
-  font-size: 0;
+  // font-size: 0;
+  justify-content: space-around;
   padding: .5vw;
 
   .photo-display {
     flex: auto;
+    height: 250px;
     margin: .5vw;
-    width: 300px;
   }
 
-  img {
-    height: auto;
-    width: 100%;
+  img,
+  figure {
+    height: 100%;
+    width: auto;
   }
 }
 

@@ -1,0 +1,12 @@
+{{yield}}
+
+
+{{#if inspectorVisible}}
+  {{photo-inspector photo=inspectedValue}}
+{{/if}}
+
+<div class='photo-grid'>
+  {{#each photos as |photo|}}
+    {{photo-display photo=photo inspect=(action 'inspect')}}
+  {{/each}}
+</div>
