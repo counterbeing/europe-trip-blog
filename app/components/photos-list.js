@@ -2,7 +2,7 @@ import Ember from 'ember'
 
 export default Ember.Component.extend({
   classNames: ['photos-list'],
-  inspectorVisible: false,
+  inspectorVisible: true,
   inspectedValue: null,
   actions: {
     inspect(photo) {

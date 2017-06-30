@@ -2,12 +2,721 @@
   "data": [
     {
       "type": "photo",
-      "id": "2c923b1e-2cfd-468a-8626-7017c084f4f8",
+      "id": "499dde50-fb39-42b2-8183-c5d8d393b90b",
+      "attributes": {
+        "filename": "tiring-day.jpg",
+        "title": "Tiring Day",
+        "caption": "We're both wrecked and showing it.",
+        "latitude": 43.77682222,
+        "longitude": 6.38771944,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "1f1bfa8e-0221-4813-ad48-533418f072a7",
+      "attributes": {
+        "filename": "mind-the-gap.jpg",
+        "title": "Mind the Gap",
+        "caption": "More offwidth. This last section wasn't too bad. The tree down below was a very welcome end to what was perhaps the crux of the climb in terms of chimneys.",
+        "latitude": 43.78931111,
+        "longitude": 6.395825,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "103810b4-9328-400b-a83b-eb1606150094",
+      "attributes": {
+        "filename": "snack-time.jpg",
+        "title": "Snack Time",
+        "caption": "This must have been at the top of pitch four. The sun was out and full force and we were both really feeling it. But the belay station was set up between this tall flat rock  (behind me in the photo), and a tree providing the only shade we'd see for the next couple of hours. Great break spot.",
+        "latitude": 43.78931111,
+        "longitude": 6.395825,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "a6f34ac2-cdf8-4405-a5c7-11202461f769",
+      "attributes": {
+        "filename": "escargot.jpg",
+        "title": "Escargot",
+        "caption": "I haven't eaten a lot of this stuff in my life, but, with all of that butter and pesto there's no way it wouldn't taste good.",
+        "latitude": 43.84741667,
+        "longitude": 6.51164167,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "2ac519c8-9c9b-48c2-9daa-0d261b5d4e61",
+      "attributes": {
+        "filename": "pitch-11.jpg",
+        "title": "Pitch 11",
+        "caption": "These smiles were actually fairly forced. We were both beat.",
+        "latitude": 43.78931111,
+        "longitude": 6.395825,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "52b3f9e5-4550-4dca-8df4-543cd9e59db5",
+      "attributes": {
+        "filename": "feet-dyed-red.jpg",
+        "title": "Feet dyed red",
+        "caption": "It's known that climbing shoes will discolor sweaty feet, but these looked pretty ridiculous. I guess that's what happens when you're in shoes all day.",
+        "latitude": 43.77697778,
+        "longitude": 6.38778333,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "de962844-7548-460c-a448-305082947f12",
+      "attributes": {
+        "filename": "orpierre-pub.jpg",
+        "title": "Orpierre Pub",
+        "latitude": 44.3135,
+        "longitude": 5.69271111,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "e21bb51c-1126-4078-844f-a9e5c83eed46",
+      "attributes": {
+        "filename": "raclette.jpg",
+        "title": "Raclette",
+        "latitude": null,
+        "longitude": null,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "92945447-a943-47a8-85a7-e6e3052ff994",
+      "attributes": {
+        "filename": "feet-and-mountains.jpg",
+        "title": "Feet and Mountains",
+        "caption": "The Sout of France was beautiful in ways I had not anticipated.",
+        "latitude": null,
+        "longitude": null,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "26cfcc72-eb24-480c-bb22-eb3d0b664087",
+      "attributes": {
+        "filename": "our-chalet.jpg",
+        "title": "Our Chalet",
+        "caption": "We spent a few nights here, great place.",
+        "latitude": null,
+        "longitude": null,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "504a6559-6619-41ab-b636-0a1ea1b633d7",
+      "attributes": {
+        "filename": "swimming.jpg",
+        "title": "Swimming",
+        "caption": "You could plop in and float down 50m in no time at all.",
+        "latitude": null,
+        "longitude": null,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "1b2fa746-058c-4181-b0cf-cbe44e471c26",
+      "attributes": {
+        "filename": "blue-water-under-the-bridge.jpg",
+        "title": "Blue Water Under the Bridge",
+        "caption": "Water was moving fast and quite cold. I checked.",
+        "latitude": 43.79189722,
+        "longitude": 6.43180556,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "cc802eb5-4a1c-47a5-8f80-464fed47ad87",
+      "attributes": {
+        "filename": "sunset-time.jpg",
+        "title": "Sunset Time",
+        "latitude": 43.69311111,
+        "longitude": 6.46863056,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "29344661-6876-4fdd-b78f-dcc4ef8b90b9",
+      "attributes": {
+        "filename": "cragging.jpg",
+        "title": "Cragging",
+        "caption": "On the right hand side of this photo is the crag. Literally the shortest approach of my life.",
+        "latitude": 43.75154167,
+        "longitude": 6.36490556,
+        "created-at": "2017-06-14T22:00:00.000Z",
+        "date-created": "2017-06-15"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "394a67af-c19f-4dcd-9981-3ac22cb46196",
+      "attributes": {
+        "filename": "more-scenic-approaching.jpg",
+        "title": "More Scenic Approaching",
+        "latitude": 43.78923889,
+        "longitude": 6.39574167,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "2821a7ec-b4f2-4819-956d-fb8f095646ed",
+      "attributes": {
+        "filename": "tunnel-entrance.jpg",
+        "title": "Tunnel Entrance",
+        "caption": "You spend probably about fifteen minutes in tunnels on the approach to the climb.",
+        "latitude": 43.78763611,
+        "longitude": 6.39583611,
+        "created-at": "2017-06-16T04:52:00.370Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "3b3ec423-2383-4555-934e-7a33d6b7ecbe",
+      "attributes": {
+        "filename": "looking-up-at-le-demande.jpg",
+        "title": "Looking up at Le Demande",
+        "caption": "We walked just a little past the approach to look at the wall. If you look, over towards the left there's a crack that trends up and left, then stops about half way. That's our climb. It's hard to believe it's 320m from this angle.",
+        "latitude": 43.77751667,
+        "longitude": 6.37540556,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "cea1f343-8b87-4ae5-badf-832ff468ff74",
+      "attributes": {
+        "filename": "gorge-from-the-start.jpg",
+        "title": "Gorge from the Start",
+        "caption": "Good place to get all geared up!",
+        "latitude": 43.77751944,
+        "longitude": 6.37537222,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "53478c35-dad8-45c5-a415-f851438c6dff",
+      "attributes": {
+        "filename": "pitch-1-of-le-demande.jpg",
+        "title": "Pitch 1 of Le Demande",
+        "caption": "If you're wondering where to start the route, take a good look at this photo just to be sure. This is the spot.",
+        "latitude": 43.77666111,
+        "longitude": 6.38851389,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "f452a4bd-bf3d-4cb7-85f7-18ccf5b2d687",
+      "attributes": {
+        "filename": "phil-traverses-pitch-2.jpg",
+        "title": "Phil Traverses Pitch 2",
+        "caption": "Fun little pitch that went pretty quickly.",
+        "latitude": 43.77698611,
+        "longitude": 6.38809722,
+        "created-at": "2017-06-16T07:01:00.110Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "e780c409-4c46-4fca-a201-412ebebc8243",
+      "attributes": {
+        "filename": "phil-leads-pitch-3.jpg",
+        "title": "Phil Leads Pitch 3",
+        "caption": "Seemed like kind of a tough one, but not too bad. I spent a lot of time here waiting since Phil climbed past his planned anchor. Communication was tough and we almost had a dangerous mix up with \"take\", sounding too much like \"safe\".",
+        "latitude": 43.77590833,
+        "longitude": 6.39223889,
+        "created-at": "2017-06-16T07:32:00.530Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "6e0fb0f7-16df-4088-a335-60c36c6b5299",
+      "attributes": {
+        "filename": "both-walls.jpg",
+        "title": "Both Walls",
+        "caption": "In the gorge!",
+        "latitude": 43.77654167,
+        "longitude": 6.389775,
+        "created-at": "2017-06-16T07:54:00.450Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "cf0b6a08-6dc2-4209-9aae-0bb3678abcb2",
+      "attributes": {
+        "filename": "phil-s-ambition.jpg",
+        "title": "Phil's Ambition",
+        "caption": "Phil overshot the anchor on pitch three, which was actually pretty easy to do. He was also a bit low on gear and decided to make a belay station right where he was.",
+        "latitude": null,
+        "longitude": null,
+        "created-at": "2017-06-16T08:25:00.460Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "e84f901c-696d-424a-9417-31e071bafe63",
+      "attributes": {
+        "filename": "across-the-gorge.jpg",
+        "title": "Across the Gorge",
+        "caption": "Even more limestone on the other side.",
+        "latitude": 43.77673056,
+        "longitude": 6.388,
+        "created-at": "2017-06-16T09:20:00.330Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "b84e9f5a-6f37-4ba7-b755-39c4db880e3d",
+      "attributes": {
+        "filename": "river-below.jpg",
+        "title": "River Below",
+        "caption": "Just more glorious scenery.",
+        "latitude": 43.77650556,
+        "longitude": 6.38910556,
+        "created-at": "2017-06-16T09:20:00.370Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "0193d74b-f97d-43de-9dc2-37552ebbbb10",
+      "attributes": {
+        "filename": "phil-pulling.jpg",
+        "title": "Phil Pulling",
+        "caption": "This pitch, I forget which, maybe 4 or 5, was actually quite a challenge. The crack didn't want to give me great hand holds a few times.",
+        "latitude": 43.77492222,
+        "longitude": 6.39213333,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "6c8504a5-6328-4b2c-8479-8c99d9d4a2f5",
+      "attributes": {
+        "filename": "dihedral-to-face.jpg",
+        "title": "Dihedral to Face",
+        "caption": "This bit moves out of the crack where phil is and across the face. The last moves felt very run out, and weren't especially easy. But it was nice getting out of the crack for some fresh air.",
+        "latitude": 43.77259722,
+        "longitude": 6.39248889,
+        "created-at": "2017-06-16T13:48:00.470Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "95695d04-e314-49a9-b2a5-4516af3bf18e",
+      "attributes": {
+        "filename": "demande-descent.jpg",
+        "title": "Demande Descent",
+        "caption": "Just beginning the walk off.",
+        "latitude": 43.77616389,
+        "longitude": 6.38607778,
+        "created-at": "2017-06-15T22:00:00.000Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "80a9dd53-57fc-47ea-9376-548cf95239aa",
+      "attributes": {
+        "filename": "from-the-top.jpg",
+        "title": "From the Top",
+        "caption": "This is after finishing Le Demande on the walk back down. You can't actually see our line from here, but it's not far from there.",
+        "latitude": 43.78026667,
+        "longitude": 6.39038333,
+        "created-at": "2017-06-16T18:43:00.270Z",
+        "date-created": "2017-06-16"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "0d850962-4b28-40e8-950d-3af875926d20",
+      "attributes": {
+        "filename": "just-off-the-road.jpg",
+        "title": "Just off the road",
+        "caption": "A place to get a 'snack' and pee. It was situated in a really beautiful place, just off the highway. They really do rest stops well in France.",
+        "latitude": 44.78839444,
+        "longitude": 5.63831111,
+        "created-at": "2017-06-16T22:00:00.000Z",
+        "date-created": "2017-06-17"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "1761b312-2612-4c32-b0a5-478518ed47d1",
+      "attributes": {
+        "filename": "mini-sandwiches.jpg",
+        "title": "Mini Sandwiches",
+        "caption": "I don't think this is a normal French thing, but we got to try a bunch of sandwiches all the same.",
+        "latitude": 45.76619722,
+        "longitude": 4.83231111,
+        "created-at": "2017-06-17T18:06:00.260Z",
+        "date-created": "2017-06-17"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "3effcb28-f1a2-41da-bf38-7577b70abdb5",
+      "attributes": {
+        "filename": "old-car-old-homes.jpg",
+        "title": "Old car old homes",
+        "caption": "It may have been too hot for a convertible this particular day.",
+        "latitude": 47.51221111,
+        "longitude": 4.53046111,
+        "created-at": "2017-06-18T11:40:00.210Z",
+        "date-created": "2017-06-18"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "e87b7fd2-4ac4-4dd3-bfae-d2258246e64a",
+      "attributes": {
+        "filename": "swallow-nests.jpg",
+        "title": "Swallow Nests",
+        "caption": "Spotted walking through a tunnel.",
+        "latitude": 47.51308889,
+        "longitude": 4.52969444,
+        "created-at": "2017-06-17T22:00:00.000Z",
+        "date-created": "2017-06-18"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "248990d4-953f-47cc-b7ac-f1106ee18b0f",
+      "attributes": {
+        "filename": "continental-breakfast.jpg",
+        "title": "Continental Breakfast",
+        "caption": "So many dishes!",
+        "latitude": 47.60041111,
+        "longitude": 4.64805556,
+        "created-at": "2017-06-18T22:00:00.000Z",
+        "date-created": "2017-06-19"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "bed84d7e-f0aa-4147-8aa7-dfc6cd5a7b65",
+      "attributes": {
+        "filename": "cragging.jpg",
+        "title": "Cragging",
+        "caption": "This crag was actually a lot of fun. Very compact, but hundreds of climbs.",
+        "latitude": 47.48288333,
+        "longitude": 4.59888889,
+        "created-at": "2017-06-19T13:34:00.440Z",
+        "date-created": "2017-06-19"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "d38c3251-db82-4d44-8913-cd1075918ecc",
+      "attributes": {
+        "filename": "courtyard.jpg",
+        "title": "Courtyard",
+        "caption": "The courtyard of our very pleasant BnB.",
+        "latitude": 47.60055556,
+        "longitude": 4.64813056,
+        "created-at": "2017-06-20T06:46:00.050Z",
+        "date-created": "2017-06-20"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "691a3fff-02b7-416a-85b4-6894c00e9941",
+      "attributes": {
+        "filename": "phil-pot-cragging.jpg",
+        "title": "Phil pot Cragging",
+        "caption": "Half in climbing mode, half in sandal mode, and feeling good.",
+        "latitude": 47.47980833,
+        "longitude": 4.60451111,
+        "created-at": "2017-06-20T11:39:00.000Z",
+        "date-created": "2017-06-20"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "9b843064-0230-4fac-81ee-418ac40a1653",
+      "attributes": {
+        "filename": "walking-dijon.jpg",
+        "title": "Walking Dijon",
+        "latitude": 47.31918333,
+        "longitude": 5.03492222,
+        "created-at": "2017-06-19T22:00:00.000Z",
+        "date-created": "2017-06-20"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "564b7510-024e-4840-9aed-9b55b4596f31",
+      "attributes": {
+        "filename": "my-bed.jpg",
+        "title": "My Bed",
+        "caption": "Not a bad spot to spend a few nights.",
+        "latitude": 48.45685278,
+        "longitude": 2.75731111,
+        "created-at": "2017-06-20T22:00:00.000Z",
+        "date-created": "2017-06-21"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "2dff4d29-069d-45b5-906f-dd77ee0d194f",
+      "attributes": {
+        "filename": "fields-outside.jpg",
+        "title": "Fields Outside",
+        "caption": "Just near the house was a rather scenic bit of farmland.",
+        "latitude": 48.45640278,
+        "longitude": 2.75832222,
+        "created-at": "2017-06-20T22:00:00.000Z",
+        "date-created": "2017-06-21"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "567e3afd-eb7f-4cd6-b372-cb660a90f072",
+      "attributes": {
+        "filename": "bridge-over-green-water.jpg",
+        "title": "Bridge over Green Water",
+        "caption": "Found myself here a couple of times on a wander through the town.",
+        "latitude": 48.45024444,
+        "longitude": 2.75737778,
+        "created-at": "2017-06-20T22:00:00.000Z",
+        "date-created": "2017-06-21"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "3f5320e5-f960-474d-8002-a0b681490efa",
+      "attributes": {
+        "filename": "solstice-party.jpg",
+        "title": "Solstice Party",
+        "caption": "A band playing Pixies and Alanis Morissette covers.",
+        "latitude": 48.45154444,
+        "longitude": 2.74927778,
+        "created-at": "2017-06-20T22:00:00.000Z",
+        "date-created": "2017-06-21"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "f712d2e5-4e26-48b0-aaa0-0c5e0e1a507f",
+      "attributes": {
+        "filename": "eiffel-tower-from-the-bus.jpg",
+        "title": "Eiffel Tower from the Bus",
+        "caption": "Rolled past it, this was the only photo I got. Pretty cool structure!",
+        "latitude": 48.85721667,
+        "longitude": 2.29309444,
+        "created-at": "2017-06-23T15:41:00.070Z",
+        "date-created": "2017-06-23"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "90a24b17-3df9-4ab9-8d47-99aee7538d10",
+      "attributes": {
+        "filename": "a-bridge.jpg",
+        "title": "A Bridge",
+        "caption": "Just saw it on a walk, thought it was pretty.",
+        "latitude": 48.84976111,
+        "longitude": 2.27752222,
+        "created-at": "2017-06-22T22:00:00.000Z",
+        "date-created": "2017-06-23"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "9cf83453-eb84-40c1-a604-7f660c3057db",
+      "attributes": {
+        "filename": "laura.jpg",
+        "title": "Laura",
+        "caption": "My friend Laura, who I know from high school.",
+        "latitude": 48.84618056,
+        "longitude": 2.276425,
+        "created-at": "2017-06-22T22:00:00.000Z",
+        "date-created": "2017-06-23"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "27eeebe1-cc54-473c-8373-47bbec1ccc17",
+      "attributes": {
+        "filename": "eiffel-is-an-eye-full.jpg",
+        "title": "Eiffel is an Eye Full",
+        "caption": "At night, every hour they set off a light display on the tower. Really quite spectacular.",
+        "latitude": 48.84674722,
+        "longitude": 2.27605278,
+        "created-at": "2017-06-23T20:58:00.220Z",
+        "date-created": "2017-06-23"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "83b5e8ca-ab3a-41d2-96cb-6f5cfc9649af",
+      "attributes": {
+        "filename": "sailing.jpg",
+        "title": "Sailing",
+        "caption": "During a picnic we sat and watched a few older gentlemen walk back and forth with their RC sailboats. All wind powered, except for the rudder.",
+        "latitude": 48.85713889,
+        "longitude": 2.257725,
+        "created-at": "2017-06-23T22:00:00.000Z",
+        "date-created": "2017-06-24"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "6fa06054-ed8f-47fd-bb81-49e5eadcf2bf",
+      "attributes": {
+        "filename": "eduard.jpg",
+        "title": "Eduard",
+        "caption": "Got to catch up with Ed at his house for a few hours.",
+        "latitude": 48.85591944,
+        "longitude": 2.39797778,
+        "created-at": "2017-06-24T22:00:00.000Z",
+        "date-created": "2017-06-25"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "569e6ff3-befb-4fd3-b223-ffcaddf4b784",
+      "attributes": {
+        "filename": "the-hood.jpg",
+        "title": "The Hood",
+        "caption": "This is near where I spent a fair amount of time. I love the little red ghost.",
+        "latitude": 48.86333889,
+        "longitude": 2.35824444,
+        "created-at": "2017-06-26T22:00:00.000Z",
+        "date-created": "2017-06-27"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "5766f619-4472-4827-919e-8f4f7c54f3d2",
+      "attributes": {
+        "filename": "julia.jpg",
+        "title": "Julia",
+        "caption": "Julia, relaxing after a long day at the office.",
+        "latitude": 48.86351667,
+        "longitude": 2.35716667,
+        "created-at": "2017-06-26T22:00:00.000Z",
+        "date-created": "2017-06-27"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "3d9377c0-2237-4121-a6ef-fec091374998",
+      "attributes": {
+        "filename": "government-building.jpg",
+        "title": "Government Building",
+        "latitude": 48.85693333,
+        "longitude": 2.35423611,
+        "created-at": "2017-06-26T22:00:00.000Z",
+        "date-created": "2017-06-27"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "1df44ce7-0762-484b-89ad-2fd8a08526f1",
+      "attributes": {
+        "filename": "parisian-canal.jpg",
+        "title": "Parisian Canal",
+        "caption": "I love cities with canals.",
+        "latitude": 48.85552222,
+        "longitude": 2.35216111,
+        "created-at": "2017-06-26T22:00:00.000Z",
+        "date-created": "2017-06-27"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "10715552-1114-40a2-918a-199a59dff815",
+      "attributes": {
+        "filename": "notre-dame.jpg",
+        "title": "Notre Dame",
+        "caption": "I never knew what it looked like. It's really a very pretty cathedral.",
+        "latitude": 48.85365,
+        "longitude": 2.34772778,
+        "created-at": "2017-06-26T22:00:00.000Z",
+        "date-created": "2017-06-27"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "ba04f087-09de-442e-9096-04be43bda1ce",
+      "attributes": {
+        "filename": "security-at-notre-dame.jpg",
+        "title": "Security at Notre Dame",
+        "caption": "I was only slightly surprised to see these guys with automatic weapons walking around. I suppose everyone is on edge.",
+        "latitude": 48.85331667,
+        "longitude": 2.34799444,
+        "created-at": "2017-06-26T22:00:00.000Z",
+        "date-created": "2017-06-27"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "70499d35-b160-4719-98ab-a44fdb8205ec",
+      "attributes": {
+        "filename": "notre-dame-in-the-distance.jpg",
+        "title": "Notre Dame in the Distance",
+        "caption": "I thought this was quite a nice vantage point of the cathederal.",
+        "latitude": 48.8502,
+        "longitude": 2.35473056,
+        "created-at": "2017-06-26T22:00:00.000Z",
+        "date-created": "2017-06-27"
+      }
+    },
+    {
+      "type": "photo",
+      "id": "09ea4c2c-3197-4141-a379-70f51ea4adfa",
       "attributes": {
         "filename": "things-get-spicy.jpg",
         "title": "Things Get Spicy",
         "caption": "Right at the to here is where things start to get tough, and it earns it's 7a.",
-        "latitude": 26.93628611,
+        "latitude": 37.00048333,
         "longitude": 26.93628611,
         "created-at": "2017-05-20T22:00:00.000Z",
         "date-created": "2017-05-21"
@@ -15,12 +724,12 @@
     },
     {
       "type": "photo",
-      "id": "1120867c-a506-4382-bc4d-5f006abee50c",
+      "id": "2bdeeb5c-48b7-43f4-8b38-e875dc72ede7",
       "attributes": {
         "filename": "more-ruins.jpg",
         "title": "More Ruins",
         "caption": "So many ruins. Rest assured there were tourists all around me when I took this photo.",
-        "latitude": 23.724575,
+        "latitude": 37.97085556,
         "longitude": 23.724575,
         "created-at": "2017-05-04T08:42:00.350Z",
         "date-created": "2017-05-04"
@@ -28,7 +737,7 @@
     },
     {
       "type": "photo",
-      "id": "1881479a-10a9-4742-9583-0878caaa190d",
+      "id": "5cd2085f-65e6-4c36-b80e-7a0b0f987469",
       "attributes": {
         "filename": "parthenon-up-close.jpg",
         "title": "Parthenon up Close",
@@ -41,12 +750,12 @@
     },
     {
       "type": "photo",
-      "id": "0af1795a-da6d-4460-95fc-b222a4889888",
+      "id": "ebaaa112-2280-4423-a5aa-7fda742a48bc",
       "attributes": {
         "filename": "sheila-and-cory.jpg",
         "title": "Sheila and Cory",
         "caption": "Got some other tourists to take a photo of us.",
-        "latitude": 23.74306389,
+        "latitude": 37.98149167,
         "longitude": 23.74306389,
         "created-at": "2017-05-04T17:57:00.420Z",
         "date-created": "2017-05-04"
@@ -54,11 +763,11 @@
     },
     {
       "type": "photo",
-      "id": "b320f488-6c96-42d0-94cc-c95c42a0e59d",
+      "id": "e0c61588-3822-4c75-af15-85a06f5e109e",
       "attributes": {
         "filename": "walk-up-lycabettus.jpg",
         "title": "Walk up Lycabettus",
-        "latitude": 23.74333889,
+        "latitude": 37.98133056,
         "longitude": 23.74333889,
         "created-at": "2017-05-03T22:00:00.000Z",
         "date-created": "2017-05-04"
@@ -66,12 +775,12 @@
     },
     {
       "type": "photo",
-      "id": "c1b1b306-0a40-4374-a605-80cee7d33849",
+      "id": "5b47e4cb-e4a8-4f0d-871c-77cb32b838c0",
       "attributes": {
         "filename": "strange-plant.jpg",
         "title": "Strange Plant",
         "caption": "I'm not certain, but I thiknk, that this massive tree-like stalk is actually the flower of the plant. Talk about sexual selection.",
-        "latitude": 23.74324722,
+        "latitude": 37.98158333,
         "longitude": 23.74324722,
         "created-at": "2017-05-03T22:00:00.000Z",
         "date-created": "2017-05-04"
@@ -79,12 +788,12 @@
     },
     {
       "type": "photo",
-      "id": "b8b7831a-6058-4126-9f60-2751608acd0b",
+      "id": "bb1ee49d-9b75-43fa-bb83-a8fe9d047d64",
       "attributes": {
         "filename": "two-pups.jpg",
         "title": "Two Pups",
         "caption": "Two really sweet dog that belonged to our hosts.",
-        "latitude": 28.22004444,
+        "latitude": 36.45063333,
         "longitude": 28.22004444,
         "created-at": "2017-05-07T14:00:00.070Z",
         "date-created": "2017-05-07"
@@ -92,12 +801,12 @@
     },
     {
       "type": "photo",
-      "id": "203bd14c-dd1d-4774-8fa2-be7bad49f46e",
+      "id": "e40a4855-08f8-4c7f-b69c-e98949f56587",
       "attributes": {
         "filename": "chilling-on-the-ferry.jpg",
         "title": "Chilling on the Ferry",
         "caption": "A German couple was nice enough to snap our pic on the boat.",
-        "latitude": 27.18199167,
+        "latitude": 36.95831667,
         "longitude": 27.18199167,
         "created-at": "2017-05-07T22:00:00.000Z",
         "date-created": "2017-05-08"
@@ -105,12 +814,12 @@
     },
     {
       "type": "photo",
-      "id": "06bff9a3-9e85-4f35-9c08-bd588ef26798",
+      "id": "b41b719d-78b5-4dd0-9b70-dfe7379f1660",
       "attributes": {
         "filename": "monastary-hike-out.jpg",
         "title": "Monastary hike out",
         "caption": "On our way back from Monastary for some cragging, we witnissed our first Kalymnos sunset.",
-        "latitude": 26.92809722,
+        "latitude": 36.96542222,
         "longitude": 26.92809722,
         "created-at": "2017-05-07T22:00:00.000Z",
         "date-created": "2017-05-08"
@@ -118,11 +827,11 @@
     },
     {
       "type": "photo",
-      "id": "8a6c1c59-5d77-47e1-ab55-8e8d3ffbd055",
+      "id": "db028afe-8ece-436d-a7cb-cf2b9aa156d3",
       "attributes": {
         "filename": "grande-grotto-right.jpg",
         "title": "Grande Grotto Right",
-        "latitude": 26.94323333,
+        "latitude": 37.00398889,
         "longitude": 26.94323333,
         "created-at": "2017-05-08T22:00:00.000Z",
         "date-created": "2017-05-09"
@@ -130,12 +839,12 @@
     },
     {
       "type": "photo",
-      "id": "e0d677a8-15ef-464d-a8e8-951e6875883f",
+      "id": "423d8a8f-856c-4f90-b567-df59072403f4",
       "attributes": {
         "filename": "post-climb-sapped.jpg",
         "title": "Post Climb Sapped",
         "caption": "We were both pretty beat, and we cracked a bottle of wine we were told was made from sap. It wasn't too bad.",
-        "latitude": 26.92990278,
+        "latitude": 36.9756,
         "longitude": 26.92990278,
         "created-at": "2017-05-08T22:00:00.000Z",
         "date-created": "2017-05-09"
@@ -143,12 +852,12 @@
     },
     {
       "type": "photo",
-      "id": "fec292b4-1349-4c39-a48b-38c21793ea16",
+      "id": "5315ac42-120a-4314-993a-db8e7822078d",
       "attributes": {
         "filename": "seaphordite-view.jpg",
         "title": "Seaphordite View",
         "caption": "The view from the back of the house before it's too dark.",
-        "latitude": 26.92984722,
+        "latitude": 36.97553889,
         "longitude": 26.92984722,
         "created-at": "2017-05-08T22:00:00.000Z",
         "date-created": "2017-05-09"
@@ -156,12 +865,12 @@
     },
     {
       "type": "photo",
-      "id": "7ad27113-72b6-4a30-bffb-e3047db7ca69",
+      "id": "54d78237-21d3-4646-9e7d-240325ffba94",
       "attributes": {
         "filename": "everything-is-a-rest-on-this-climb.jpg",
         "title": "Everything is a Rest on this Climb",
         "caption": "Quest snapped this pic of me, it came out pretty cool.",
-        "latitude": 26.944425,
+        "latitude": 37.00349444,
         "longitude": 26.944425,
         "created-at": "2017-05-20T22:00:00.000Z",
         "date-created": "2017-05-21"
@@ -169,11 +878,11 @@
     },
     {
       "type": "photo",
-      "id": "160f081b-1eb7-4c4a-9a6a-99614fc9acc4",
+      "id": "baad6a8c-9162-480d-b9b7-46e66942cd35",
       "attributes": {
         "filename": "first-gyro-plate.jpg",
         "title": "First Gyro Plate",
-        "latitude": 23.727475,
+        "latitude": 37.98748056,
         "longitude": 23.727475,
         "created-at": "2017-04-29T22:00:00.000Z",
         "date-created": "2017-04-30"
@@ -181,12 +890,12 @@
     },
     {
       "type": "photo",
-      "id": "0d3fdf27-efbd-4c14-9b9a-d3c7b40dd367",
+      "id": "17da9d21-5a56-4b2a-9c8c-0a064b343d2f",
       "attributes": {
         "filename": "ruins.jpg",
         "title": "Ruins",
         "caption": "Just encountered these on a walk.",
-        "latitude": 23.72654444,
+        "latitude": 37.97395833,
         "longitude": 23.72654444,
         "created-at": "2017-05-01T13:50:00.070Z",
         "date-created": "2017-05-01"
@@ -194,12 +903,12 @@
     },
     {
       "type": "photo",
-      "id": "7ff66dfb-9d3d-4315-921c-3ff1d3196ce0",
+      "id": "ab43b05e-89ab-4b77-9468-4397eda46f88",
       "attributes": {
         "filename": "cityscape.jpg",
         "title": "Cityscape",
         "caption": "This distant hill has a church on it. Bookmarked to walk up that later.",
-        "latitude": 23.72804722,
+        "latitude": 37.97238889,
         "longitude": 23.72804722,
         "created-at": "2017-04-30T22:00:00.000Z",
         "date-created": "2017-05-01"
@@ -207,12 +916,12 @@
     },
     {
       "type": "photo",
-      "id": "152c1d4a-3236-4ffa-9fa7-670b57050721",
+      "id": "f1929633-d898-46cb-981e-3381141033e4",
       "attributes": {
         "filename": "reading-in-the-garden.jpg",
         "title": "Reading in the Garden",
         "caption": "I sat and read a book for a while just here. It's a nice little park to hang out in.",
-        "latitude": 23.73537222,
+        "latitude": 37.97265,
         "longitude": 23.73537222,
         "created-at": "2017-04-30T22:00:00.000Z",
         "date-created": "2017-05-01"
@@ -220,12 +929,12 @@
     },
     {
       "type": "photo",
-      "id": "bd07641f-30c2-4612-b8ad-511b445c54b5",
+      "id": "b3425d20-4987-4eb0-8c64-c952063457a7",
       "attributes": {
         "filename": "a-common-park.jpg",
         "title": "A Common Park",
         "caption": "Off the tourist track.",
-        "latitude": 23.73587222,
+        "latitude": 37.99366667,
         "longitude": 23.73587222,
         "created-at": "2017-05-02T22:00:00.000Z",
         "date-created": "2017-05-03"
@@ -233,12 +942,12 @@
     },
     {
       "type": "photo",
-      "id": "5150c824-3c38-49de-9187-acdd47c59996",
+      "id": "b81b8d1a-58b0-40e7-a49a-142b447ca6fc",
       "attributes": {
         "filename": "rooftop-pano.jpg",
         "title": "Rooftop Pano",
         "caption": "Thi is a panorama of the roof of our AirBnb rental in Greece. This place was really incredible.",
-        "latitude": 23.74932222,
+        "latitude": 37.980625,
         "longitude": 23.74932222,
         "created-at": "2017-05-02T22:00:00.000Z",
         "date-created": "2017-05-03"
@@ -246,12 +955,12 @@
     },
     {
       "type": "photo",
-      "id": "6e61a5e4-3909-40a9-b81c-5298b41b498d",
+      "id": "bad5b469-cd1b-44e9-9fdb-86cdf4d25654",
       "attributes": {
         "filename": "packed-parthenon.jpg",
         "title": "Packed Parthenon",
         "caption": "This is the foot traffic during the low season. Crazy.",
-        "latitude": 23.72477778,
+        "latitude": 37.97147778,
         "longitude": 23.72477778,
         "created-at": "2017-05-03T22:00:00.000Z",
         "date-created": "2017-05-04"
@@ -259,12 +968,12 @@
     },
     {
       "type": "photo",
-      "id": "397188a8-3f90-4ced-bbc4-ef3f00d13375",
+      "id": "2fd0b36b-f24c-47d0-a6e1-305fc981ef20",
       "attributes": {
         "filename": "sheila-and-the-parthanon.jpg",
         "title": "Sheila and the Parthanon",
         "caption": "This was on our way out of tourist hell.",
-        "latitude": 23.724,
+        "latitude": 37.97004444,
         "longitude": 23.724,
         "created-at": "2017-05-03T22:00:00.000Z",
         "date-created": "2017-05-04"
@@ -272,7 +981,7 @@
     },
     {
       "type": "photo",
-      "id": "987db12a-d8f4-40e9-a282-4a3fa79f109d",
+      "id": "4da26c1a-b35e-4827-827d-b6ebecf66ff0",
       "attributes": {
         "filename": "a-place-to-work.jpg",
         "title": "A Place to Work",
@@ -285,12 +994,12 @@
     },
     {
       "type": "photo",
-      "id": "78235d5d-cf0d-4456-b68a-2b11c1ed3492",
+      "id": "e51ae8c1-39ef-4351-8d42-6d9a784e8bb0",
       "attributes": {
         "filename": "sunset-over-athens.jpg",
         "title": "Sunset over Athens",
         "caption": "A sea of houses, man of which are white.",
-        "latitude": 23.74310556,
+        "latitude": 37.98155278,
         "longitude": 23.74310556,
         "created-at": "2017-05-03T22:00:00.000Z",
         "date-created": "2017-05-04"
@@ -298,12 +1007,12 @@
     },
     {
       "type": "photo",
-      "id": "4abbae1e-01ab-48be-aba8-70a7651ed060",
+      "id": "e60d8087-0a1f-4ada-90c5-b8edb731e7c0",
       "attributes": {
         "filename": "tourism-on-mount-lycabettus.jpg",
         "title": "Tourism on Mount Lycabettus",
         "caption": "We weren't the only ones with this idea, and it was a good one!",
-        "latitude": 23.74320556,
+        "latitude": 37.98179167,
         "longitude": 23.74320556,
         "created-at": "2017-05-03T22:00:00.000Z",
         "date-created": "2017-05-04"
@@ -311,12 +1020,12 @@
     },
     {
       "type": "photo",
-      "id": "4b0a5780-b6df-410c-9f14-4c7fe257e46e",
+      "id": "2125fce5-b7ab-4b24-ac70-8fd8f40f7d56",
       "attributes": {
         "filename": "parthanon-at-night.jpg",
         "title": "Parthanon at Night",
         "caption": "You can jut barely see it lit up at night in this photo. Honestly, this is one of the better places to see the Parthanon. It's not impressive at all in the photo, but you could make out much more detail and appreciate its scale in person.",
-        "latitude": 23.74359722,
+        "latitude": 37.98096944,
         "longitude": 23.74359722,
         "created-at": "2017-05-03T22:00:00.000Z",
         "date-created": "2017-05-04"
@@ -324,12 +1033,12 @@
     },
     {
       "type": "photo",
-      "id": "85c9ac31-db33-46b5-942b-69c8ff648c31",
+      "id": "0c7fb371-eb74-4fb0-b59a-676f7dca7197",
       "attributes": {
         "filename": "chicken-salad.jpg",
         "title": "Chicken Salad",
         "caption": "Way too much salad.",
-        "latitude": 23.81265,
+        "latitude": 38.07103056,
         "longitude": 23.81265,
         "created-at": "2017-05-05T13:24:00.170Z",
         "date-created": "2017-05-05"
@@ -337,12 +1046,12 @@
     },
     {
       "type": "photo",
-      "id": "646be628-2329-4117-9bb3-ace67c07100a",
+      "id": "12ad4824-932b-49ba-9c75-757a1386d9dd",
       "attributes": {
         "filename": "kalymnos-from-above.jpg",
         "title": "Kalymnos from Above",
         "caption": "I saw a landmass out the window of the plane and realized it was likely Kalymnos! Sure enough, I checked the map and it was. Though our plane was bound for Rhodes, it still got me amped to climb, just seeing the island.",
-        "latitude": 26.87135556,
+        "latitude": 36.78842222,
         "longitude": 26.87135556,
         "created-at": "2017-05-05T22:00:00.000Z",
         "date-created": "2017-05-06"
@@ -350,12 +1059,12 @@
     },
     {
       "type": "photo",
-      "id": "b129893f-d522-438e-945a-ea39eff34234",
+      "id": "a880c41c-3761-4aba-8d99-32fe4ae01428",
       "attributes": {
         "filename": "rhodes-castle.jpg",
         "title": "Rhodes Castle",
         "caption": "The castle was really quite magnificent. You just have to avoid a bunch of the people trying to sell you things.",
-        "latitude": 28.22344722,
+        "latitude": 36.446,
         "longitude": 28.22344722,
         "created-at": "2017-05-06T22:00:00.000Z",
         "date-created": "2017-05-07"
@@ -363,12 +1072,12 @@
     },
     {
       "type": "photo",
-      "id": "5ec5bab6-49c1-4d43-939d-af690e6a6964",
+      "id": "e025d85a-6369-40b9-8d29-6b42a8c233bc",
       "attributes": {
         "filename": "dry-moat.jpg",
         "title": "Dry Moat",
         "caption": "We finished our tour of the castle by walking around it. It's astonishingly huge. It took us ages to get back and find food.",
-        "latitude": 28.23245278,
+        "latitude": 36.44084167,
         "longitude": 28.23245278,
         "created-at": "2017-05-06T22:00:00.000Z",
         "date-created": "2017-05-07"
@@ -376,12 +1085,12 @@
     },
     {
       "type": "photo",
-      "id": "a2d2221c-e681-475d-be79-94f4adff8efd",
+      "id": "39544dca-059f-42da-b48e-1b85d649d888",
       "attributes": {
         "filename": "cat-on-the-wall.jpg",
         "title": "Cat on the Wall",
         "caption": "There are cats everywhere, the moat can't even keep them out.",
-        "latitude": 28.22997778,
+        "latitude": 36.439975,
         "longitude": 28.22997778,
         "created-at": "2017-05-06T22:00:00.000Z",
         "date-created": "2017-05-07"
@@ -389,12 +1098,12 @@
     },
     {
       "type": "photo",
-      "id": "9a79354f-1ed1-4f2c-900e-61b8f98aef6b",
+      "id": "aedd2080-9121-49e6-ae1b-bbcd2b1ec75b",
       "attributes": {
         "filename": "poppies.jpg",
         "title": "Poppies",
         "caption": "These impossibly red flowers were all over the place.",
-        "latitude": 28.22541389,
+        "latitude": 36.43987222,
         "longitude": 28.22541389,
         "created-at": "2017-05-07T11:11:00.570Z",
         "date-created": "2017-05-07"
@@ -402,12 +1111,12 @@
     },
     {
       "type": "photo",
-      "id": "2176c6b2-70b0-4e40-bd49-83d2b771dc31",
+      "id": "fc54d584-f16d-4e41-8a0e-ae5db52c0fa2",
       "attributes": {
         "filename": "white-wine.jpg",
         "title": "White Wine",
         "caption": "We were gifted a bottle of wine by our hosts. So lovely, and great for a hot day.",
-        "latitude": 28.220025,
+        "latitude": 36.45060833,
         "longitude": 28.220025,
         "created-at": "2017-05-07T13:52:00.280Z",
         "date-created": "2017-05-07"
@@ -415,12 +1124,12 @@
     },
     {
       "type": "photo",
-      "id": "59658cf3-18f9-47a3-8e0f-886d52a4e66a",
+      "id": "7e3d53c1-f678-41c9-93f5-4e1963f44b1e",
       "attributes": {
         "filename": "a-light-lunch.jpg",
         "title": "A Light Lunch",
         "caption": "I decided to get the larger gyro feeling quite hungry. I had no idea it was going to be the size of my head.",
-        "latitude": 26.93609722,
+        "latitude": 36.97644722,
         "longitude": 26.93609722,
         "created-at": "2017-05-07T22:00:00.000Z",
         "date-created": "2017-05-08"
@@ -428,12 +1137,12 @@
     },
     {
       "type": "photo",
-      "id": "0e3e56a3-c025-4f38-8215-037387adb8aa",
+      "id": "a73bda90-80af-4260-87ae-360db7829b8a",
       "attributes": {
         "filename": "sheila-rope-wrangling.jpg",
         "title": "Sheila Rope Wrangling",
         "caption": "Sheila's first time coiling rope, it only gets easier from here.",
-        "latitude": 26.92654722,
+        "latitude": 36.96046944,
         "longitude": 26.92654722,
         "created-at": "2017-05-08T17:23:00.500Z",
         "date-created": "2017-05-08"
@@ -441,12 +1150,12 @@
     },
     {
       "type": "photo",
-      "id": "2fbbb9ad-a326-40b6-a767-8541dbd6d4b8",
+      "id": "8151135d-af31-4a06-8d95-5e1d0325a83e",
       "attributes": {
         "filename": "monastary-panorama.jpg",
         "title": "Monastary Panorama",
         "caption": "Can't see anyone in any direction.",
-        "latitude": 26.92458889,
+        "latitude": 36.96112778,
         "longitude": 26.92458889,
         "created-at": "2017-05-07T22:00:00.000Z",
         "date-created": "2017-05-08"
@@ -454,12 +1163,12 @@
     },
     {
       "type": "photo",
-      "id": "82df2d45-81c4-4cb2-af48-6c90fd242375",
+      "id": "7e0da828-f95e-4ba3-81cf-defdf8eef21a",
       "attributes": {
         "filename": "goaty-mc-goat-face.jpg",
         "title": "Goaty McGoat Face",
         "caption": "This goat seems to hang around the Grande Grotto area. She's absolutely a sweetie, and even likes to get pets. Just don't piss her off, she will head butt you.",
-        "latitude": 26.9445,
+        "latitude": 37.00309444,
         "longitude": 26.9445,
         "created-at": "2017-05-08T22:00:00.000Z",
         "date-created": "2017-05-09"
@@ -467,12 +1176,12 @@
     },
     {
       "type": "photo",
-      "id": "8c545494-570f-44c3-9b2a-71813d984f7d",
+      "id": "277ee41d-a29a-447f-af98-45db264fb0fc",
       "attributes": {
         "filename": "grande-grotto-kalymnos.jpg",
         "title": "Grande Grotto Kalymnos",
         "caption": "This cave is located just up behind Masouri. The walk isn't too bad, and the climbing is fantastic. Wonderful classic climbs can be found here.",
-        "latitude": 26.94671667,
+        "latitude": 37.00259722,
         "longitude": 26.94671667,
         "created-at": "2017-05-08T22:00:00.000Z",
         "date-created": "2017-05-09"
@@ -480,12 +1189,12 @@
     },
     {
       "type": "photo",
-      "id": "ec2957fb-9bcc-4d49-8cb5-a4a6a6f4cd74",
+      "id": "0979bb7a-badd-47cb-8b04-1fd3fca20d83",
       "attributes": {
         "filename": "too-much-food.jpg",
         "title": "Too Much Food",
         "caption": "Once again, we ordered way too much food. We continued to do this to ourselves somehow.",
-        "latitude": 26.93795833,
+        "latitude": 36.99956389,
         "longitude": 26.93795833,
         "created-at": "2017-05-09T15:10:00.340Z",
         "date-created": "2017-05-09"
@@ -493,12 +1202,12 @@
     },
     {
       "type": "photo",
-      "id": "2cf5a2a6-5ab3-41c7-997f-6f843c5b53d0",
+      "id": "5504a2bf-a6d5-4f66-a87f-9bd0d8b2dddd",
       "attributes": {
         "filename": "sunset-at-seaphrodite.jpg",
         "title": "Sunset at Seaphrodite",
         "caption": "This sunset was snapped from our place in Panormos.",
-        "latitude": 26.93001667,
+        "latitude": 36.97563056,
         "longitude": 26.93001667,
         "created-at": "2017-05-08T22:00:00.000Z",
         "date-created": "2017-05-09"
@@ -506,12 +1215,12 @@
     },
     {
       "type": "photo",
-      "id": "439b23f5-9c1c-4ea9-bfac-bf86415b3388",
+      "id": "ebab05fa-0956-4b7e-9719-90ba8c76b773",
       "attributes": {
         "filename": "seacliff.jpg",
         "title": "Seacliff",
         "caption": "Up at a climbing areah, but looking down at another. There's great shady afternoon climbing behind that rock.",
-        "latitude": 26.94380278,
+        "latitude": 37.01610278,
         "longitude": 26.94380278,
         "created-at": "2017-05-09T22:00:00.000Z",
         "date-created": "2017-05-10"
@@ -519,7 +1228,7 @@
     },
     {
       "type": "photo",
-      "id": "0028783c-dc53-4136-a52a-8a4469b5a940",
+      "id": "91628876-a142-4488-9a14-2b79d8187e3d",
       "attributes": {
         "filename": "kalymnos-area.jpg",
         "title": "Kalymnos Area",
@@ -532,12 +1241,12 @@
     },
     {
       "type": "photo",
-      "id": "2ef32671-f816-4c0c-833c-cefc16c85fbc",
+      "id": "57f8a678-696d-4d15-9949-0a46da8227c6",
       "attributes": {
         "filename": "behind-the-olive-press.jpg",
         "title": "Behind the Olive Press",
         "caption": "This is a first person photo of a really fun section on a 6c+ that I enjoyed. Well bolted, pumpy, lie-back to face transition.",
-        "latitude": 26.96251389,
+        "latitude": 36.96763611,
         "longitude": 26.96251389,
         "created-at": "2017-05-11T12:11:00.270Z",
         "date-created": "2017-05-11"
@@ -545,12 +1254,12 @@
     },
     {
       "type": "photo",
-      "id": "e20fcdc1-f70f-483f-ac6d-2bf3dcbcc96e",
+      "id": "01ec1883-415a-4927-aaf8-88d65b23ef57",
       "attributes": {
         "filename": "kalymnos-castle.jpg",
         "title": "Kalymnos Castle",
         "caption": "We had no idea we were going to be climbing across the valley from an ancient castle!",
-        "latitude": 26.962825,
+        "latitude": 36.96628889,
         "longitude": 26.962825,
         "created-at": "2017-05-10T22:00:00.000Z",
         "date-created": "2017-05-11"
@@ -558,12 +1267,12 @@
     },
     {
       "type": "photo",
-      "id": "a5a54ec0-f412-48ee-a7d8-9997f27a1bda",
+      "id": "2b526320-5b2a-4259-8b33-8d0c7a2f26e4",
       "attributes": {
         "filename": "how-greek-is-this.jpg",
         "title": "How Greek is This",
         "caption": "So Greek.",
-        "latitude": 26.93236667,
+        "latitude": 36.97259167,
         "longitude": 26.93236667,
         "created-at": "2017-05-10T22:00:00.000Z",
         "date-created": "2017-05-11"
@@ -571,12 +1280,12 @@
     },
     {
       "type": "photo",
-      "id": "b1a2a614-5130-4c11-b9c2-5f2c9f621580",
+      "id": "271b2b4a-1dce-4fe5-bc84-315d50dda9dd",
       "attributes": {
         "filename": "jack-getting-ready-to-pull-a-roof.jpg",
         "title": "Jack getting ready to pull a roof",
         "caption": "The following roof move gives you a full leg heel hook for a clipping stance, much appreciated.",
-        "latitude": 26.96888056,
+        "latitude": 37.05371944,
         "longitude": 26.96888056,
         "created-at": "2017-05-13T10:03:00.270Z",
         "date-created": "2017-05-13"
@@ -584,12 +1293,12 @@
     },
     {
       "type": "photo",
-      "id": "953ad441-40e7-4200-b4a3-63d88d9a61a5",
+      "id": "5fc213ee-f9ad-461c-9f9f-7a458c85f182",
       "attributes": {
         "filename": "secret-garden-from-the-left.jpg",
         "title": "Secret Garden from the Left",
         "caption": "The crag from one side. What a glorious piece of limestone.",
-        "latitude": 26.96886389,
+        "latitude": 37.05363333,
         "longitude": 26.96886389,
         "created-at": "2017-05-13T10:17:00.020Z",
         "date-created": "2017-05-13"
@@ -597,12 +1306,12 @@
     },
     {
       "type": "photo",
-      "id": "f631a914-ea11-43f7-b6d1-ed2ac9d0b138",
+      "id": "72428ca4-80eb-4158-8b47-f35cea7a4532",
       "attributes": {
         "filename": "standing-on-a-tufa.jpg",
         "title": "Standing on a Tufa",
         "caption": "This is on Frapogalo 6c. The crux is at the beginning, and then you get to stand on a tufa blob for a rest.",
-        "latitude": 26.96832222,
+        "latitude": 37.05348889,
         "longitude": 26.96832222,
         "created-at": "2017-05-13T11:14:00.000Z",
         "date-created": "2017-05-13"
@@ -610,12 +1319,12 @@
     },
     {
       "type": "photo",
-      "id": "bc4b04ac-1a0e-40d7-a343-dc9a59ae4bd3",
+      "id": "c332624b-42e6-4e04-92c5-418bd80be6b7",
       "attributes": {
         "filename": "jack-on-ricounet-7a.jpg",
         "title": "Jack on Ricounet 7a",
         "caption": "I was at a rest in a cave and managed to snap a few cool shots of Jack.",
-        "latitude": 26.96808889,
+        "latitude": 37.054,
         "longitude": 26.96808889,
         "created-at": "2017-05-12T22:00:00.000Z",
         "date-created": "2017-05-13"
@@ -623,12 +1332,12 @@
     },
     {
       "type": "photo",
-      "id": "e2d238ae-e11a-41cc-803a-4f7ce418b38f",
+      "id": "f78b4150-857e-43f8-bfa2-ae74ba58772c",
       "attributes": {
         "filename": "starting-ballos-7a.jpg",
         "title": "Starting Ballos 7a+",
         "caption": "Oops, almost clipped, try again.",
-        "latitude": 26.96832222,
+        "latitude": 37.05349444,
         "longitude": 26.96832222,
         "created-at": "2017-05-13T13:03:00.150Z",
         "date-created": "2017-05-13"
@@ -636,12 +1345,12 @@
     },
     {
       "type": "photo",
-      "id": "7028efa5-07f1-4a9d-99de-2d251cab223b",
+      "id": "67ff6c80-9dd8-484b-9dd1-4fceb5df77aa",
       "attributes": {
         "filename": "cory-on-ballos-7a.jpg",
         "title": "Cory on Ballos 7a+",
         "caption": "Me, sunburnt, and working hard. I didn't make it to the top on this one, but had a few good burns on it.",
-        "latitude": 26.968325,
+        "latitude": 37.05345833,
         "longitude": 26.968325,
         "created-at": "2017-05-12T22:00:00.000Z",
         "date-created": "2017-05-13"
@@ -649,12 +1358,12 @@
     },
     {
       "type": "photo",
-      "id": "6fa245a6-dbc3-40e5-9f34-0aa59c55a86e",
+      "id": "ae77c3fe-24ec-4a73-b078-c4563a5b283b",
       "attributes": {
         "filename": "steph-seeks-tufa.jpg",
         "title": "Steph Seeks Tufa",
         "caption": "Steph on her way to tufa-town.",
-        "latitude": 26.96830833,
+        "latitude": 37.05344444,
         "longitude": 26.96830833,
         "created-at": "2017-05-13T13:24:00.100Z",
         "date-created": "2017-05-13"
@@ -662,12 +1371,12 @@
     },
     {
       "type": "photo",
-      "id": "6f4748bc-92cd-4923-b18f-7e53632c6c92",
+      "id": "d674e4e3-5a48-43c8-ad21-36308d58ed88",
       "attributes": {
         "filename": "secret-garden-from-the-right.jpg",
         "title": "Secret Garden from the Right",
         "caption": "Another crag overview shot. Just as we were leaving we spotted a pod of dolphins which would probably be in frame in the ocean, but they can't be seen here.",
-        "latitude": 26.96670833,
+        "latitude": 37.05340278,
         "longitude": 26.96670833,
         "created-at": "2017-05-13T15:58:00.590Z",
         "date-created": "2017-05-13"
@@ -675,12 +1384,12 @@
     },
     {
       "type": "photo",
-      "id": "3c089c97-3552-40aa-9e90-5f6b8b3ea581",
+      "id": "4ad40690-4c18-4552-bd11-eba4d426302b",
       "attributes": {
         "filename": "telendos-sunset.jpg",
         "title": "Telendos Sunset",
         "caption": "Yet another glorious sunset, looking out at the island of Telendos.",
-        "latitude": 26.93586389,
+        "latitude": 36.99798611,
         "longitude": 26.93586389,
         "created-at": "2017-05-13T22:00:00.000Z",
         "date-created": "2017-05-14"
@@ -688,12 +1397,12 @@
     },
     {
       "type": "photo",
-      "id": "74fc86cb-e5d2-4625-b9e4-5ae92d539b9b",
+      "id": "b2842ea6-b6f1-439c-a755-1725fde62acc",
       "attributes": {
         "filename": "telendos-at-dawn.jpg",
         "title": "Telendos at Dawn",
         "caption": "After being awoken uncerimoniously by a mosquito, I wandered outside and snapped this picture.",
-        "latitude": 26.93895833,
+        "latitude": 36.99995556,
         "longitude": 26.93895833,
         "created-at": "2017-05-15T22:00:00.000Z",
         "date-created": "2017-05-16"
@@ -701,7 +1410,7 @@
     },
     {
       "type": "photo",
-      "id": "bdb7f477-17ea-4fa9-9e92-aa1a9b2165c4",
+      "id": "d1f00b28-36d7-494f-9066-39005947d439",
       "attributes": {
         "filename": "new-friends.jpg",
         "title": "New Friends",
@@ -713,12 +1422,12 @@
     },
     {
       "type": "photo",
-      "id": "68e65f38-b6d0-4aa7-94fe-9e4884d7b72c",
+      "id": "b0e4ad6b-75ef-4b3c-b347-077c5f027dca",
       "attributes": {
         "filename": "more-goats.jpg",
         "title": "More Goats",
         "caption": "They're always there, and they love apple cores. So nice to not have to pack those out.",
-        "latitude": 26.96168611,
+        "latitude": 37.03415278,
         "longitude": 26.96168611,
         "created-at": "2017-05-15T22:00:00.000Z",
         "date-created": "2017-05-16"
@@ -726,12 +1435,12 @@
     },
     {
       "type": "photo",
-      "id": "53e4eb8f-5e6c-4c78-a2c8-ef210058d473",
+      "id": "8bd6f966-7080-4e2c-93b8-4f24cc812215",
       "attributes": {
         "filename": "cory-climbing.jpg",
         "title": "Cory Climbing",
         "caption": "Getting some!",
-        "latitude": 26.96152778,
+        "latitude": 37.03426667,
         "longitude": 26.96152778,
         "created-at": "2017-05-16T10:46:00.020Z",
         "date-created": "2017-05-16"
@@ -739,12 +1448,12 @@
     },
     {
       "type": "photo",
-      "id": "511ee6d0-5a54-4645-9172-4d765827ca17",
+      "id": "0bd28e51-e285-41c8-83cf-4fd18457de94",
       "attributes": {
         "filename": "view-from-telendos.jpg",
         "title": "View from Telendos",
         "caption": "At the top of our big climb.",
-        "latitude": 26.90660556,
+        "latitude": 37.00691667,
         "longitude": 26.90660556,
         "created-at": "2017-05-19T11:09:00.460Z",
         "date-created": "2017-05-19"
@@ -752,11 +1461,11 @@
     },
     {
       "type": "photo",
-      "id": "5da7f5c2-a8d2-404c-8a1e-3ca97ad3a1d5",
+      "id": "c1c4f7d7-f47a-45ed-a9ca-ebda907ecc82",
       "attributes": {
         "filename": "kalymnos-from-telendos.jpg",
         "title": "Kalymnos from Telendos",
-        "latitude": 26.90675278,
+        "latitude": 37.00710278,
         "longitude": 26.90675278,
         "created-at": "2017-05-18T22:00:00.000Z",
         "date-created": "2017-05-19"
@@ -764,12 +1473,12 @@
     },
     {
       "type": "photo",
-      "id": "0ec61f71-c912-4a7a-9548-c93428bc0cb7",
+      "id": "ebfc3783-e660-4c51-b210-8492e67e0946",
       "attributes": {
         "filename": "ried.jpg",
         "title": "Ried",
         "caption": "Yay! No more climbing shoes!",
-        "latitude": 26.90665556,
+        "latitude": 37.00686944,
         "longitude": 26.90665556,
         "created-at": "2017-05-18T22:00:00.000Z",
         "date-created": "2017-05-19"
@@ -777,12 +1486,12 @@
     },
     {
       "type": "photo",
-      "id": "aee86756-9321-4b9c-994e-49d2cc2ded84",
+      "id": "46b56935-c5af-4e27-95e3-e8f07c55ceef",
       "attributes": {
         "filename": "ried-in-the-rubble.jpg",
         "title": "Ried in the Rubble",
         "caption": "This is just near a tiny church on the hill.",
-        "latitude": 26.96218056,
+        "latitude": 37.04966389,
         "longitude": 26.96218056,
         "created-at": "2017-05-18T22:00:00.000Z",
         "date-created": "2017-05-19"
@@ -790,12 +1499,12 @@
     },
     {
       "type": "photo",
-      "id": "b0e3553e-b104-43ff-bda1-090e383c182b",
+      "id": "2d85a052-03a9-4794-9c41-94afb16a7a13",
       "attributes": {
         "filename": "inside-the-site.jpg",
         "title": "Inside the Site",
         "caption": "Candle is still burning, not quite sure what the significance is, but I'm fairly certain it's Jesus related.",
-        "latitude": 26.91251667,
+        "latitude": 37.01151389,
         "longitude": 26.91251667,
         "created-at": "2017-05-18T22:00:00.000Z",
         "date-created": "2017-05-19"
@@ -803,12 +1512,12 @@
     },
     {
       "type": "photo",
-      "id": "467c712a-cbb1-4ba8-a7c0-8c0309be82e5",
+      "id": "c05d1600-1893-40dd-abf8-3f714998c15e",
       "attributes": {
         "filename": "pilgramage-site.jpg",
         "title": "Pilgramage Site",
         "caption": "I was told people come here to pray and light candles.",
-        "latitude": 26.91238333,
+        "latitude": 37.01150833,
         "longitude": 26.91238333,
         "created-at": "2017-05-18T22:00:00.000Z",
         "date-created": "2017-05-19"
@@ -816,12 +1525,12 @@
     },
     {
       "type": "photo",
-      "id": "5de754d5-77d3-4a79-84ed-b8503d6b7d29",
+      "id": "e061ce52-c7f7-409d-a1af-b41d33279370",
       "attributes": {
         "filename": "walk-off-telendos.jpg",
         "title": "Walk off Telendos",
         "caption": "As the decent goes on, the hike eventually winds past a nude beach and ends at a bar. Not bad.",
-        "latitude": 26.92315833,
+        "latitude": 37.00652778,
         "longitude": 26.92315833,
         "created-at": "2017-05-19T13:03:00.180Z",
         "date-created": "2017-05-19"
@@ -829,12 +1538,12 @@
     },
     {
       "type": "photo",
-      "id": "4820fd74-bf74-4f98-98f6-c33b37e4bdf1",
+      "id": "e79dd853-fd81-41fd-8f65-7c81744d5035",
       "attributes": {
         "filename": "new-hat-selfie.jpg",
         "title": "New hat selfie",
         "caption": "Digging my new hat.",
-        "latitude": 26.93878611,
+        "latitude": 36.99993611,
         "longitude": 26.93878611,
         "created-at": "2017-05-20T07:30:00.130Z",
         "date-created": "2017-05-20"
@@ -842,11 +1551,11 @@
     },
     {
       "type": "photo",
-      "id": "fd8a3270-f391-4f72-be01-694055301bda",
+      "id": "28df15dc-5d2f-4aa5-ac97-6f8e6facfb98",
       "attributes": {
         "filename": "jordan-lowering-on-dna.jpg",
         "title": "Jordan Lowering on DNA",
-        "latitude": 26.94414444,
+        "latitude": 37.00334444,
         "longitude": 26.94414444,
         "created-at": "2017-05-21T12:04:00.260Z",
         "date-created": "2017-05-21"
@@ -854,12 +1563,12 @@
     },
     {
       "type": "photo",
-      "id": "86e1d06f-e1c6-42ab-92cb-3dcd57fb74e1",
+      "id": "db7c8b2d-32bd-4948-8be6-20faaaea649e",
       "attributes": {
         "filename": "rappelling-off-of-grande-grotto.jpg",
         "title": "Rappelling off of Grande Grotto",
         "caption": "I'm told it requires two 80m ropes. I believe it.",
-        "latitude": 26.94353056,
+        "latitude": 37.00368056,
         "longitude": 26.94353056,
         "created-at": "2017-05-21T14:21:00.490Z",
         "date-created": "2017-05-21"

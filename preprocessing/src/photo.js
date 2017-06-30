@@ -64,7 +64,7 @@ class Photo {
         filename: this.metadata.relativePath,
         title: this.metadata.title,
         caption: this.metadata.caption,
-        latitude: this.metadata.longitude,
+        latitude: this.metadata.latitude,
         longitude: this.metadata.longitude,
         'created-at': this.metadata.createdAt,
         'date-created': this.metadata.dateCreated,

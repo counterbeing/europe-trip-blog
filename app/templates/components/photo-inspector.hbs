@@ -1,7 +1,32 @@
 {{yield}}
 
-<h2>inspector</h2>
-{{photo.title}}
-{{photo.caption}}
-{{photo.latitude}}
-{{photo.longitude}}
+{{#if photo}}
+
+  {{#if photo.latitude}}
+    {{#leaflet-map lat=photo.latitude lng=photo.longitude zoom=14}}
+      {{!-- {{tile-layer url='http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'}} --}}
+      {{!-- 'http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}' --}}
+      {{!-- 'http://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}' --}}
+      {{!-- 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}' --}}
+
+
+      {{tile-layer url='http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}'}}
+      {{#marker-layer lat=photo.latitude lng=photo.longitude}}
+        {{#popup-layer}}
+          <h3>Place</h3>
+        {{/popup-layer}}
+      {{/marker-layer}}
+    {{/leaflet-map}}
+  {{/if}}
+
+
+  <div class='metadata'>
+    <h2>{{photo.title}}</h2>
+    <figcaption>
+      {{photo.caption}}
+    </figcaption>
+  {{!-- {{photo.latitude}}, {{photo.longitude}} --}}
+</div>
+
+
+{{/if}}
