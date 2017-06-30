@@ -1,9 +1,13 @@
 {{yield}}
 
 
-{{#if inspectorVisible}}
+{{#if inspectedValue}}
   {{photo-inspector photo=inspectedValue}}
 {{/if}}
+
+<div class='photo-viewer'>
+  <img src="https://s3.amazonaws.com/europe-trip-blog/{{inspectedValue.dateCreated}}/large/{{inspectedValue.filename}}">
+</div>
 
 <div class='photo-grid'>
   {{#each photos as |photo|}}

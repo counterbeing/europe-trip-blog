@@ -6,7 +6,6 @@ export default Ember.Component.extend({
   inspectedValue: null,
   actions: {
     inspect(photo) {
-      Ember.set(this, 'inspectorVisible', true)
       Ember.set(this, 'inspectedValue', photo)
     },
 

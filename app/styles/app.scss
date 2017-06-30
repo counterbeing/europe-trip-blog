@@ -6,8 +6,7 @@ $shadow: darken($dark, 15%);
 $light: #fff;
 $highlight: #ffc0cb;
 $red: #f00;
-
-$semi-dark: rbga($shadow, .7);
+$smoke: rgba($dark, .7);
 
 $font-scale: 1;
 
@@ -129,13 +128,13 @@ a {
   position: fixed;
   right: 0;
   top: 0;
-  width: 50%;
+  width: 30%;
 
-  .metadata{
-    background-color: rgba(#333, .7);
+  .metadata {
+    background-color: $smoke;
     bottom: 0;
     padding: 20px;
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 1000;
   }
@@ -147,23 +146,27 @@ a {
 }
 
 .photo-grid {
-  width: 50%;
+  // font-size: 0;
   display: flex;
   flex-flow: row wrap;
-  // font-size: 0;
   justify-content: space-around;
   padding: .5vw;
+  width: 70%;
 
   .photo-display {
     flex: auto;
-    height: 250px;
+    height: 150px;
     margin: .5vw;
   }
 
   img,
   figure {
-    height: 100%;
-    width: auto;
+    cursor: pointer;
+    height: 150px;
+    object-fit: cover;
+    width: 150px;
+    // height: 100%;
+    // width: auto;
   }
 }
 
