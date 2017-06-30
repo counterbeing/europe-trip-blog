@@ -1,10 +1,14 @@
 /* eslint-env node */
 const EmberApp = require('ember-cli/lib/broccoli/ember-app')
+const config= require('./config/environment')
+
+console.log(config)
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
     fingerprint: {
+      prepend: config.rootURL,
       exclude: [
         'images/layers-2x.png',
         'images/layers.png',

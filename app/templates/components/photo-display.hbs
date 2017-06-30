@@ -1,3 +1,4 @@
-  <figure onclick={{action 'inspectPhoto'}}>
-    <img src="/photos/{{photo.dateCreated}}/medium/{{photo.filename}}">
-  </figure>
+<figure onclick={{action 'inspectPhoto'}}>
+  {{!-- <img src="/photos/{{photo.dateCreated}}/medium/{{photo.filename}}"> --}}
+  <img src="https://s3.amazonaws.com/europe-trip-blog/{{photo.dateCreated}}/medium/{{photo.filename}}">
+</figure>
