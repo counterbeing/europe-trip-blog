@@ -161,7 +161,7 @@ var moveOriginal = function moveOriginal(photoObject) {
 };
 
 var formatDate = function formatDate(exifDateString) {
-  return (0, _moment2.default)(exifDateString, 'YYYY:MM:DD HH:mm:SS.ss');
+  return _moment2.default.utc(exifDateString, 'YYYY:MM:DD HH:mm:SS.ss');
 };
 
 var phashFromFile = function phashFromFile(path) {

@@ -117,7 +117,7 @@ var moveOriginal = (photoObject) => {
 }
 
 var formatDate = (exifDateString) => {
-  return moment(exifDateString, 'YYYY:MM:DD HH:mm:SS.ss')
+  return moment.utc(exifDateString, 'YYYY:MM:DD HH:mm:SS.ss')
 }
 
 var phashFromFile = (path) => {

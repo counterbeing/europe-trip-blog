@@ -3,6 +3,7 @@ pipeline:
     image: corylogan/node_python
     commands:
       # - ember test
+      - cd preprocessing
       - npm install
       - npm test
 
