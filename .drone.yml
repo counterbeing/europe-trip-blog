@@ -3,20 +3,31 @@ pipeline:
     image: corylogan/node_python:0.0.1
     commands:
       - cd preprocessing
-      - npm install
+      - echo "installing node modules, this will take a moment"
+      - npm install > /dev/null 2>&1
       - npm test
 
-  # Run ember tests:
+  trigger_deploy:
+    image: corylogan/simple-drone-trigger:0.0.4
+    secrets: [ DRONE_TOKEN, DRONE_SERVER ]
+    environment:
+      - DRONE_SERVER=${DRONE_SERVER}
+      - DRONE_TOKEN=${DRONE_TOKEN}
+      - REPOSITORY=counterbeing/homepage
+    # when:
+    #   event: push
+    #   branch: master
+    #   success: true
 
-notify:
-  downstream:
-    image: plugins/downstream
-    server: https://drone.flirtmoji.co
-    repositories:
-      - corylogan/homepage
-    # secrets: [ DRONE_TOKEN ]
-    # token: ${DRONE_TOKEN}
-    when:
-      event: push
-      branch: master
-      success: true
+# notify:
+#   downstream:
+#     # image: plugins/downstream
+#     server: https://drone.flirtmoji.co
+#     repositories:
+#       - counterbeing/homepage
+#     secrets: [ DRONE_TOKEN ]
+#     token: ${DRONE_TOKEN}
+#     when:
+#       event: push
+#       branch: master
+#       success: true
