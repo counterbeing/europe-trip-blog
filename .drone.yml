@@ -1,22 +1,21 @@
 pipeline:
-  Run tests:
+  Run preprocessor tests:
     image: corylogan/node_python
     commands:
-      # - ember test
       - cd preprocessing
       - npm install
       - npm test
+      
+  # Run ember tests:
 
 notify:
-  # image: plugins/trigger
-  # secrets: [ DRONE_TOKEN ]
-
   downstream:
     image: plugins/downstream
     server: https://drone.flirtmoji.co
     repositories:
       - corylogan/homepage
-    token: ${DRONE_TOKEN}
+    # secrets: [ DRONE_TOKEN ]
+    # token: ${DRONE_TOKEN}
     when:
       event: push
       branch: master

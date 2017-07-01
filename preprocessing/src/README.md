@@ -2,7 +2,7 @@
 - Update metadata and skip photo processing if photo is same
 - Reject photos without titles in metadata
 - Move project to homepage repo
-- 
+-
 
 ## Overview of Photo Processing
 
@@ -27,3 +27,11 @@
 - Create list of photos that exist in a story
   - Gather the metadata from those
   - Maybe that goes into the actual file, maybe they're fetched separately.
+
+
+## Docker
+```
+docker build \
+  -t corylogan/node_python . \
+  -t corylogan/node_python:latest . 
+```
