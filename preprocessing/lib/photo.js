@@ -122,7 +122,7 @@ var Photo = function () {
         return _exiftool2.default.metadataAsync(data);
       }).then(function (metadata) {
         var dimensionsArr = splitImageSize(metadata.imageSize);
-        var dateObject = formatDate(metadata.dateCreated || metadata.createDate);
+        var dateObject = formatDate(metadata.createDate || metadata.dateCreated);
         var formattedDate = dateObject.format('YYYY-MM-DD');
 
         console.log('processing: ' + metadata.title);
@@ -161,7 +161,7 @@ var moveOriginal = function moveOriginal(photoObject) {
 };
 
 var formatDate = function formatDate(exifDateString) {
-  return (0, _moment2.default)(exifDateString, 'YYYY:MM:DD HH:mm:SS');
+  return (0, _moment2.default)(exifDateString, 'YYYY:MM:DD HH:mm:SS.ss');
 };
 
 var phashFromFile = function phashFromFile(path) {

@@ -68,6 +68,7 @@ describe('Photo', function() {
       assert.equal(result.latitude, '36.95831667')
       assert.equal(result.imageWidth, '1900')
       assert.equal(result.relativePath, 'chilling-on-the-ferry.jpg')
+      assert.equal(result.createdAt.format(), '2017-05-08T11:15:03+02:00')
     })
   })
 

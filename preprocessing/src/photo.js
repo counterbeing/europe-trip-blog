@@ -83,7 +83,7 @@ class Photo {
     })
     .then((metadata) => {
       let dimensionsArr = splitImageSize(metadata.imageSize)
-      let dateObject = formatDate(metadata.dateCreated || metadata.createDate)
+      let dateObject = formatDate(metadata.createDate || metadata.dateCreated)
       let formattedDate = dateObject.format('YYYY-MM-DD')
 
       console.log('processing: ' + metadata.title)
@@ -117,7 +117,7 @@ var moveOriginal = (photoObject) => {
 }
 
 var formatDate = (exifDateString) => {
-  return moment(exifDateString, 'YYYY:MM:DD HH:mm:SS')
+  return moment(exifDateString, 'YYYY:MM:DD HH:mm:SS.ss')
 }
 
 var phashFromFile = (path) => {
