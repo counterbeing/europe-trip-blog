@@ -47,6 +47,10 @@ var writeJson = function writeJson(file, data) {
   return _fsExtra2.default.writeJson(file, { data: data }, { spaces: 2 });
 };
 
+var byCreated = function byCreated(a, b) {
+  b.attributes['created-at'] - a.attributes['created-at'];
+};
+
 var _masterIndex = function _masterIndex(metadata) {
   var file = _path2.default.join(config.photosDir, '/masterIndex.json');
   return _fsExtra2.default.writeJson(file, metadata, { spaces: 2 });
@@ -58,6 +62,7 @@ var _index = function _index(metadata) {
     var photo = new _photo2.default(data);
     return photo.formatForExport();
   });
+  photos = photos.sort(byCreated);
   return writeJson(file, photos);
 };
 

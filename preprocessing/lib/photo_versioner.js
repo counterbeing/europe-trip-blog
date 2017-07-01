@@ -13,7 +13,7 @@ Promise.promisifyAll(fs);
 
 var config = require('../config/' + (process.env.NODE_ENV || 'development'));
 
-var imagePresets = [['thumb', 100], ['medium', 800], ['large', 1200], ['huge', 1600]];
+var imagePresets = [['thumb', 200], ['medium', 600], ['large', 1000], ['huge', 1600]];
 
 exports.default = function (imageObject) {
   return fs.readFileAsync(imageObject.filePath).then(function (imageBuffer) {

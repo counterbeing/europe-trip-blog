@@ -34,7 +34,7 @@ describe('Photo', function() {
         { filename: 'monastary-hike-out.jpg',
           title: 'Monastary hike out',
           caption: 'On our way back from Monastary for some cragging, we witnissed our first Kalymnos sunset.',
-          latitude: 26.92809722,
+          latitude: 36.96542222,
           longitude: 26.92809722,
           'created-at': '2017-05-07T22:00:00.000Z',
           'date-created': '2017-05-07',

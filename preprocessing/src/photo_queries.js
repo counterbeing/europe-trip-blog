@@ -39,6 +39,10 @@ var writeJson = (file, data) => {
   )
 }
 
+var byCreated = (a, b) => {
+  b.attributes['created-at'] - a.attributes['created-at']
+}
+
 var masterIndex = (metadata) => {
   let file = path.join(config.photosDir, '/masterIndex.json')
   return fs.writeJson(file, metadata, {spaces: 2})
@@ -50,6 +54,7 @@ var index = (metadata) => {
     let photo = new Photo(data)
     return photo.formatForExport()
   })
+  photos = photos.sort(byCreated)
   return writeJson(file, photos)
 }
 

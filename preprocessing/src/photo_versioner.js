@@ -9,9 +9,9 @@ Promise.promisifyAll(fs)
 var config = require('../config/' + (process.env.NODE_ENV || 'development'))
 
 let imagePresets = [
-  [ 'thumb', 100 ],
-  [ 'medium', 800 ],
-  [ 'large', 1200],
+  [ 'thumb', 200 ],
+  [ 'medium', 600 ],
+  [ 'large', 1000],
   [ 'huge', 1600 ]
 ]
 
