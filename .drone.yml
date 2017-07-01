@@ -1,9 +1,10 @@
 pipeline:
   Run tests:
-    image: node:8.1-alpine
+    image: corylogan/node_python
     commands:
       # - ember test
       - cd preprocessing
+      - ls
       - npm install
       - npm test
 
