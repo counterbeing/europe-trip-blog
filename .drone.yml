@@ -1,11 +1,11 @@
 pipeline:
   Run preprocessor tests:
-    image: corylogan/node_python
+    image: corylogan/node_python:0.0.1
     commands:
       - cd preprocessing
       - npm install
       - npm test
-      
+
   # Run ember tests:
 
 notify:
