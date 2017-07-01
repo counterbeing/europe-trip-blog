@@ -1,7 +1,8 @@
 ## Next Steps
-- Write out master index
-- Read photos from master index
-- Write new, or replace with newly provided photos
+- Update metadata and skip photo processing if photo is same
+- Reject photos without titles in metadata
+- Move project to homepage repo
+- 
 
 ## Overview of Photo Processing
 

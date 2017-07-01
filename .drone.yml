@@ -1,0 +1,23 @@
+pipeline:
+  Run tests:
+    image: node:8.1-alpine
+    commands:
+      # - ember test
+      - cd preprocessing
+      - npm install
+      - npm test
+
+notify:
+  # image: plugins/trigger
+  # secrets: [ DRONE_TOKEN ]
+
+  downstream:
+    image: plugins/downstream
+    server: https://drone.flirtmoji.co
+    repositories:
+      - corylogan/homepage
+    token: ${DRONE_TOKEN}
+    when:
+      event: push
+      branch: master
+      success: true
