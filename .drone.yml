@@ -1,19 +1,22 @@
 pipeline:
-  Run preprocessor tests:
-    image: corylogan/node_python:0.0.1
-    commands:
-      - cd preprocessing
-      - echo "installing node modules, this will take a moment"
-      - npm install > /dev/null 2>&1
-      - npm test
+  # Run preprocessor tests:
+  #   image: corylogan/node_python:0.0.1
+  #   commands:
+  #     - cd preprocessing
+  #     - echo "installing node modules, this will take a moment"
+  #     - npm install > /dev/null 2>&1
+  #     - npm test
 
-  trigger_deploy:
-    image: corylogan/simple-drone-trigger:0.0.4
+  Trigger homepage build:
+    image: corylogan/simple-drone-trigger:0.0.6
+    pull: true
     secrets: [ DRONE_TOKEN, DRONE_SERVER ]
     environment:
       - DRONE_SERVER=${DRONE_SERVER}
       - DRONE_TOKEN=${DRONE_TOKEN}
       - REPOSITORY=counterbeing/homepage
+    # commands:
+    #   - echo 'stfu'
     # when:
     #   event: push
     #   branch: master
