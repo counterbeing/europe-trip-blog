@@ -5,9 +5,11 @@
   {{photo-inspector photo=inspectedValue}}
 {{/if}}
 
-<div class='photo-viewer'>
-  <img src="https://s3.amazonaws.com/europe-trip-blog/{{inspectedValue.dateCreated}}/large/{{inspectedValue.filename}}">
-</div>
+{{#if inspectedValue}}
+  <div class='photo-viewer'>
+      <img src="https://s3.amazonaws.com/europe-trip-blog/{{inspectedValue.dateCreated}}/large/{{inspectedValue.filename}}">
+  </div>
+{{/if}}
 
 <div class='photo-grid'>
   {{#each photos as |photo|}}

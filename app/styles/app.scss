@@ -123,6 +123,17 @@ a {
   }
 }
 
+.photo-viewer {
+  height: 80vh;
+  width: 70%;
+  text-align: center;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
 .photo-inspector {
   float: right;
   position: fixed;
@@ -146,27 +157,26 @@ a {
 }
 
 .photo-grid {
-  // font-size: 0;
   display: flex;
   flex-flow: row wrap;
+  height: 20vh;
   justify-content: space-around;
-  padding: .5vw;
+  overflow-y: scroll;
+  padding: .3vw;
   width: 70%;
 
   .photo-display {
     flex: auto;
-    height: 150px;
-    margin: .5vw;
+    height: 80px;
+    margin: .3vw;
   }
 
   img,
   figure {
     cursor: pointer;
-    height: 150px;
+    height: 80px;
     object-fit: cover;
-    width: 150px;
-    // height: 100%;
-    // width: auto;
+    width: 80px;
   }
 }
 
