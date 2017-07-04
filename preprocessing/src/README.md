@@ -30,8 +30,13 @@
 
 
 ## Docker
+We need node and python to install all npm modules and test.
+
 ```
 docker build \
-  -t corylogan/node_python . \
-  -t corylogan/node_python:latest . 
+  -t corylogan/node_python \
+  -t corylogan/node_python:latest \
+  .
+
+docker push corylogan/node_python
 ```
