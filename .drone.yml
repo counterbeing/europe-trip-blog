@@ -8,13 +8,15 @@ pipeline:
       - npm test
 
   Trigger homepage build:
-    image: corylogan/simple-drone-trigger:0.0.6
+    image: corylogan/simple-drone-trigger:0.0.8
     pull: true
     secrets: [ DRONE_TOKEN, DRONE_SERVER ]
     environment:
       - DRONE_SERVER=${DRONE_SERVER}
       - DRONE_TOKEN=${DRONE_TOKEN}
       - REPOSITORY=counterbeing/homepage
+    commands:
+      - drone build start --fork $REPOSITORY $(drone build last $REPOSITORY | head -n 1 | cut -d " " -f 2)
     # when:
     #   event: push
     #   branch: master
