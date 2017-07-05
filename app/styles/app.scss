@@ -125,8 +125,8 @@ a {
 
 .photo-viewer {
   height: 80vh;
-  width: 70%;
   text-align: center;
+  width: 70%;
 
   img {
     max-height: 100%;
@@ -157,16 +157,16 @@ a {
 }
 
 .photo-grid {
-  display: flex;
-  flex-flow: row wrap;
-  height: 20vh;
-  justify-content: space-around;
-  overflow-y: scroll;
+  bottom: 0;
+  height: 90px;
+  overflow-x: scroll;
   padding: .3vw;
+  position: absolute;
+  white-space: nowrap;
   width: 70%;
 
   .photo-display {
-    flex: auto;
+    display: inline-block;
     height: 80px;
     margin: .3vw;
   }
