@@ -37,6 +37,7 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.14.3",
     "ember-export-application-global": "^1.0.5",
+    "ember-in-viewport": "^2.1.1",
     "ember-leaflet": "^3.0.12",
     "ember-load-initializers": "^0.6.0",
     "ember-moment": "^7.3.1",
