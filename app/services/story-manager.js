@@ -9,9 +9,9 @@ export default Ember.Service.extend({
 
   showSelectedStory: function() {
     if (this.get('currentlySelectedStory')) {
-      console.log('Displaying: ' + this.get('currentlySelectedStory'))
+      // console.log('Displaying: ' + this.get('currentlySelectedStory'))
     } else {
-      console.log('select a damn story')
+      // console.log('select a damn story')
     }
   }
 })
