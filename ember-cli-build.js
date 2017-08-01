@@ -1,8 +1,7 @@
 /* eslint-env node */
-const EmberApp = require('ember-cli/lib/broccoli/ember-app')
-const config= require('./config/environment')
 
-console.log(config)
+const EmberApp = require('ember-cli/lib/broccoli/ember-app')
+const config = require('./config/environment')
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
