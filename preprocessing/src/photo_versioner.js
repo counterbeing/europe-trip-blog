@@ -1,8 +1,8 @@
-var Promise = require('bluebird')
-var fs = require('fs-extra')
-var sharp = require('sharp')
-var path = require('path')
-var chalk = require('chalk')
+import Promise from 'bluebird'
+import fs from 'fs-extra'
+import sharp from 'sharp'
+import path from 'path'
+import chalk from 'chalk'
 
 Promise.promisifyAll(fs)
 
