@@ -45,7 +45,8 @@
     "globby": "^6.1.0",
     "leaflet": "^1.1.0",
     "loader.js": "^4.6.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "path-browserify": "0.0.0"
   },
   "engines": {
     "node": ">= 4"
@@ -56,8 +57,7 @@
       "lib/story-parser"
     ]
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "main": "ember-cli-build.js",
   "bugs": {
     "url": "https://github.com/counterbeing/europe-trip-blog/issues"
