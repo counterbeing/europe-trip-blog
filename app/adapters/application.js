@@ -1,7 +1,7 @@
 import DS from 'ember-data'
-import Ember from 'ember'
+// import Ember from 'ember'
 const config = require('../config/environment')
-const { String: { pluralize } } = Ember
+// const { String: { pluralize } } = Ember
 
 let rootURL = config.default.rootURL
 
@@ -10,9 +10,10 @@ export default DS.JSONAPIAdapter.extend({
   suffix: '.json',
   buildURL: function(modelName, id, snapshot, requestType, query) {
     if(id) {
-      let pluralModel = pluralize(modelName)
-      let url = join(rootURL, pluralModel, `${id}.json`)
-      // return `${rootURL}${pluralModel}/${id}.json`
+      // let pluralModel = pluralize(modelName)
+      // let url = join(rootURL, pluralModel, `${id}.json`)
+      let ext = '.json'
+      let url = this._super(modelName, id, snapshot, requestType, query) + ext
       return url
     } else {
       let prefix = this._super(modelName, id, snapshot, requestType, query)
